@@ -9,51 +9,39 @@ body {
     background-size: cover;
     width: 100%;
     margin: 0;
-
     font-family: "western";
-   
-    
-
     header {
         display: flex;
         justify-content: space-around;
         flex-wrap: nowrap;
         flex-direction: row;
         height: 100px;
-        background-image: url("../images/bgtitre.png"); 
+        background-image: url("../images/bgtitre.png");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
-        
-    h1 {
-        font-size: 5em;
-        letter-spacing: 3px;
-        margin-top: 10px;
-        text-align: center;
-        font-weight: 100;
-        margin-left: 70px;
+        h1 {
+            font-size: 5em;
+            letter-spacing: 3px;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: 100;
+            margin-left: 70px;
         }
-        #moneysm
-        {
+        #moneysm {
             width: 25px;
             height: 35px;
         }
-        #moneygd
-        {
-           width: 35px;
+        #moneygd {
+            width: 35px;
             height: 50px;
         }
-        p
-        {
+        p {
             font-size: 2.5em;
         }
-       
     }
-
-    main
-    {
-        display: flex; 
-            
+    main {
+        display: flex;
         #jouer {
             background-image: url('../images/wheel.png');
             width: 10%;
@@ -70,37 +58,30 @@ body {
                 margin: 5%;
             }
         }
-        
-        #boutonjouer
-        {
-        background-image: url(../images/wheel.png);
-        background-repeat: no-repeat;       
-        background-position: center;
-        background-size: contain;
-        border: none;
-        background-color: transparent;
-        padding: 55px;
-        text-transform: uppercase;
-        font-family: "western";
-        font-size: 3em;
-        justify-content: center;
-        align-content: center;    
-            
-        &:hover {
-            opacity: 0.5;
+        #boutonjouer {
+            background-image: url(../images/wheel.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            border: none;
+            background-color: transparent;
+            padding: 55px;
+            text-transform: uppercase;
+            font-family: "western";
+            font-size: 3em;
+            justify-content: center;
+            align-content: center;
+            &:hover {
+                opacity: 0.5;
+            }
         }
-        }
-        p
-        {
+        p {
             font-size: 2.5em;
         }
     }
-        
-
     footer {
         display: flex;
         justify-content: center;
-
         #cowboy {
             position: absolute;
             bottom: 0;
