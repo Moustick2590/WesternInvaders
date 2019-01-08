@@ -1,5 +1,17 @@
 body {
+  background-image: url("../images/bg_scene_1.jpg");
+  background-size: cover;
   width: 100%;
+}
+body footer {
+  display: flex;
+  justify-content: center;
+}
+body footer #cowboy {
+  position: absolute;
+  bottom: 0;
+  width: 4%;
+  height: 6%;
 }
 
 /*# sourceMappingURL=main.css.map */

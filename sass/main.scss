@@ -1,3 +1,15 @@
 body {
+    background-image: url('../images/bg_scene_1.jpg');
+    background-size: cover;
     width: 100%;
+    footer {
+        display: flex;
+        justify-content: center;
+        #cowboy {
+            position: absolute;
+            bottom: 0;
+            width: 4%;
+            height: 6%;
+        }
+    }
 }
