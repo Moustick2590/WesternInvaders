@@ -2,6 +2,7 @@ body {
   background-image: url("../images/bg_scene_1.jpg");
   background-size: cover;
   width: 100%;
+  margin: 0;
 }
 body footer {
   display: flex;

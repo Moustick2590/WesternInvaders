@@ -7,10 +7,10 @@ const xMaxCowboy = parseFloat(getComputedStyle(cadreCowboy).width);
 const ennemis = document.getElementById('ennemis');
 const ennemi1 = document.getElementById('ennemi_1');
 
-var cadre = document.getElementById("cadre");
-var ballon = document.getElementById("ballon");
+/*var cadre = document.getElementById("cadre");
+var bandit = document.getElementById("bandit");
 var vitesse = 3; // Valeur du déplacement en pixels
-var diametreBallon = parseFloat(getComputedStyle(ballon).width); // Conversion en nombre du diametre du ballon
+var diametreBandit = parseFloat(getComputedStyle(bandit).width); // Conversion en nombre du diametre du bandit
 var animationId = null; // Identifiant de l'animation
 var xMin = 0; // Position gauche minimale
 var direction = 1; // Sens de déplacement: 1 droite, 2 gauche
@@ -21,37 +21,51 @@ function animerEnnemis() {
     var xBallon = parseFloat(getComputedStyle(ballon).left);
     var yBallon = parseFloat(getComputedStyle(ballon).bottom);
     var newYBallon = "";
-    // Conversion en nombre de la largeur du cadre
-    var xMax = parseFloat(getComputedStyle(cadre).width);
-    // Si le ballon arrive a un bord du cadre
-    if ((xBallon + diametreBallon > xMax) || (xBallon < xMin)) {
-        // On inverse le sens de déplacement
-        direction *= -1;
-        var newYBallon = yBallon - 10;
+    // D2place le bandit vers la gauche ou la droite
+    function animerBandit() {
+        // Conversion en nombre de la position gauche du bloc
+        var xBandit = parseFloat(getComputedStyle(bandit).left);
+        // Conversion en nombre de la largeur du cadre
+        var xMax = parseFloat(getComputedStyle(cadre).width);
+        // Si le ballon arrive a un bord du cadre
+        if ((xBandit + diametreBandit > xMax) || (xBandit < xMin)) {
+            // On inverse le sens de déplacement
+            direction *= -1;
+            var newYBallon = yBallon - 10;
+        }
+        ballon.style.bottom = newYBallon + "px";
+        // Déplacement du ballon dans le sens actuel
+        ballon.style.left = (xBallon + vitesse * direction) + "px";
+        // Demande au navigateur d'appeler animerBallon dès que possible
+        animationId = requestAnimationFrame(animerEnnemis);
+        // Déplacement du bandit dans le sens actuel
+        bandit.style.left = (xBandit + vitesse * direction) + "px";
+        // Demande au navigateur d'appeler animerBandit dès que possible
+        animationId = requestAnimationFrame(animerBandit);
     }
-    ballon.style.bottom = newYBallon + "px";
-    // Déplacement du ballon dans le sens actuel
-    ballon.style.left = (xBallon + vitesse * direction) + "px";
-    // Demande au navigateur d'appeler animerBallon dès que possible
-    animationId = requestAnimationFrame(animerEnnemis);
-}
+};
 
-var demarrerBtn = document.getElementById("demarrer");
-var arreterBtn = document.getElementById("arreter");
+var jouerBtn = document.getElementById("jouer");
+//var arreterBtn = document.getElementById("arreter");
 
-demarrerBtn.addEventListener("click", function() {
+demarrerBtn.addEventListener("click", function () {
     // Change l'état des boutons
-    demarrerBtn.disabled = true;
-    arreterBtn.disabled = false;
+    jouerBtn.disabled = true;
+    //arreterBtn.disabled = false;
     // Démarre l'animation
-    requestAnimationFrame(animerBallon);
+    requestAnimationFrame(animerBandit);
 });
 
-arreterBtn.addEventListener("click", function() {
+arreterBtn.addEventListener("click", function () {
     demarrerBtn.disabled = false;
     arreterBtn.disabled = true;
-    cancelAnimationFrame(animationId);
-});
+    arreterBtn.addEventListener("click", function () {
+        jouerBtn.disabled = false;
+        //arreterBtn.disabled = true;
+        cancelAnimationFrame(animationId);
+
+    });
+});*/
 
 // Fonction deplacement cowboy
 document.onkeydown = function(event) {
