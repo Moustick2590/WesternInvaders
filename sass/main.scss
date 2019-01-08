@@ -9,6 +9,7 @@ body {
     background-size: cover;
     width: 100%;
     margin: 0;
+
     font-family: "western";
    
     
@@ -53,6 +54,23 @@ body {
     {
         display: flex; 
             
+        #jouer {
+            background-image: url('../images/wheel.png');
+            width: 10%;
+            height: 10%;
+            background-size: cover;
+        }
+        #bandit {
+            position: relative;
+            left: 0;
+            width: 20%;
+            .bandits {
+                width: 15%;
+                height: 20%;
+                margin: 5%;
+            }
+        }
+        
         #boutonjouer
         {
         background-image: url(../images/wheel.png);
@@ -78,6 +96,7 @@ body {
         }
     }
         
+
     footer {
         display: flex;
         justify-content: center;
@@ -85,7 +104,7 @@ body {
         #cowboy {
             position: absolute;
             bottom: 0;
-            width: 4%;
+            width: 3%;
             height: 6%;
         }
     }
