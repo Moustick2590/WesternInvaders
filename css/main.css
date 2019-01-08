@@ -4,6 +4,22 @@ body {
   width: 100%;
   margin: 0;
 }
+body main #jouer {
+  background-image: url("../images/wheel.png");
+  width: 10%;
+  height: 10%;
+  background-size: cover;
+}
+body main #bandit {
+  position: relative;
+  left: 0;
+  width: 20%;
+}
+body main #bandit .bandits {
+  width: 15%;
+  height: 20%;
+  margin: 5%;
+}
 body footer {
   display: flex;
   justify-content: center;
@@ -11,7 +27,7 @@ body footer {
 body footer #cowboy {
   position: absolute;
   bottom: 0;
-  width: 4%;
+  width: 3%;
   height: 6%;
 }
 

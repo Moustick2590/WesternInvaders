@@ -3,13 +3,31 @@ body {
     background-size: cover;
     width: 100%;
     margin: 0;
+    main {
+        #jouer {
+            background-image: url('../images/wheel.png');
+            width: 10%;
+            height: 10%;
+            background-size: cover;
+        }
+        #bandit {
+            position: relative;
+            left: 0;
+            width: 20%;
+            .bandits {
+                width: 15%;
+                height: 20%;
+                margin: 5%;
+            }
+        }
+    }
     footer {
         display: flex;
         justify-content: center;
         #cowboy {
             position: absolute;
             bottom: 0;
-            width: 4%;
+            width: 3%;
             height: 6%;
         }
     }
