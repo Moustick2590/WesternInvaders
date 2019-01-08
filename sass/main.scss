@@ -1,3 +1,19 @@
+@font-face{
+    font-family: 'western';
+    src: url(../fonts/"Go_2_Old_Western.otf");}
+
 body {
-    width: 100%;
+  width: 100%;
+    background-image: url("../images/bg_scene_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+header
+{
+   display: flex; 
+    justify-content: space-around;
+    flex-direction: row;
+    h1
+    { font-family: "western";    }
 }
+    }
+
