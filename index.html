@@ -15,27 +15,40 @@
     <meta property="og:title" content="Blueasy portfolio" />
     <meta property="og:description" content="Ce site est un jeu du genre space invaders version western" />
     <meta property="og:image" content="logo" />
-    <link rel="stylesheet" href="css/main.css" type="texte/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
     </head>
         <body>
             <!------------------------------------Score, Titre, Meilleur Score------------------------------------------>
             <header> 
-                <img src="images/smallmoneybag.png">
-                <p>score</p>
+                <p><img id="moneysm" src="images/smallmoneybag.png" alt="bourse d'argent" height="176" width="148">
+                score</p>
                 <h1>Western Invaders</h1>
-                <img src="images/bigmoneybag.png" alt="bourse d'argent">
-                <p>meilleur score</p>
+                <p><img id="moneygd" src="images/bigmoneybag.png" alt="bourse d'argent" height="276" width="232">
+                meilleur score</p>
                 
             </header>
              <!--------------------------------------Ennemis--------------------------------------------------------------->
-            <main id="cadre">
-                <img src="bandit" >
-
-            </main>
-            <footer> <!------------------------------------Héros----------------------------------------------------------------->
-
-            </footer>
+            <main id="zonejeu">
+            <p id="explication">Bienvenue au Far West ! Vous devez sauver notre ville de l'attaque des bandits, pour cela, tirer avec la touche "espace" et déplacer vous avec les flèches directionnelles "gauche" et "droite"</p>    
+                     <button type="button" name="button" value="jouer" id="boutonjouer">jouer</button>
             
-            <script src="js/main.js" async defer></script>
-        </body>
-    </html>
+           
+            <div id="bandit"><img src="images/bandit1.png">
+        </div>
+    </main>
+    <footer id="cadre_cowboy">
+        <!------------------------------------Héros----------------------------------------------------------------->
+        <img src="images/cowboy.png" alt="cowboy" width="259" height="339" id="cowboy">
+  
+
+    <script src="js/main.js"></script>
+                  </footer>
+</body>
+
+
+      
+            
+       
+</html>
+

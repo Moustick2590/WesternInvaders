@@ -1,21 +1,76 @@
-@font-face{
-    font-family: 'western';
-    src: url(../fonts/"Go_2_Old_Western.otf");}
-
-body {
-  width: 100%;
-    background-image: url("../images/bg_scene_1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    }
-
-header
-{
-   display: flex; 
-    justify-content: space-around;
-    flex-direction: row;
-   
+@font-face {
+  font-family: "western";
+  src: url("../fonts/Go_2_Old_Western.otf");
 }
- h1
-    { font-family: "western";    }
+body {
+  background-image: url("../images/bg_scene_2.jpg");
+  background-size: cover;
+  width: 100%;
+  margin: 0;
+  font-family: "western";
+}
+body header {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: 100px;
+  background-image: url("../images/bgtitre.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+body header h1 {
+  font-size: 5em;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 100;
+  margin-left: 70px;
+}
+body header #moneysm {
+  width: 25px;
+  height: 35px;
+}
+body header #moneygd {
+  width: 35px;
+  height: 50px;
+}
+body header p {
+  font-size: 2.5em;
+}
+body main {
+  display: flex;
+}
+body main #boutonjouer {
+  background-image: url(../images/wheel.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  padding: 55px;
+  text-transform: uppercase;
+  font-family: "western";
+  font-size: 3em;
+  justify-content: center;
+  align-content: center;
+}
+body main #boutonjouer:hover {
+  opacity: 0.5;
+}
+body main p {
+  font-size: 2.5em;
+}
+body footer {
+  display: flex;
+  justify-content: center;
+}
+body footer #cowboy {
+  position: absolute;
+  bottom: 0;
+  width: 4%;
+  height: 6%;
+}
+
+/*# sourceMappingURL=main.css.map */
