@@ -1,15 +1,8 @@
 /* fonction jouer */
 var jouer = document.getElementById("boutonjouer");
-var zoneJeu = document.getElementById("cadre_ennemis");
-var bandit = document.getElementById("bandit");
-zoneJeu.removeChild(bandit);
 var explication = document.getElementById("explication");
 
-jouer.addEventListener("click", function() {
-zoneJeu.removeChild(jouer);
-zoneJeu.removeChild(explication);
-zoneJeu.appendChild(bandit); 
-})
+
 
 
 const cadreCowboy = document.getElementById("cadre_cowboy");
@@ -18,8 +11,9 @@ let cowboyX = "";
 const diametreCowboy = parseFloat(getComputedStyle(cowboy).width); // Conversion en nombre du diametre du ballon
 const xMin = 0; // Position gauche minimale
 const xMaxCowboy = parseFloat(getComputedStyle(cadreCowboy).width);
-const jouerBtn = document.getElementById("jouer");
+
 const cadreEnnemis = document.getElementById("cadre_ennemis");
+
 
 const bandit = document.getElementById("bandit");
 const vitesse = 8; // Valeur du déplacement en pixels
@@ -53,14 +47,10 @@ function animerBandit() {
     animationId = requestAnimationFrame(animerBandit);
 
 }
-
-
-jouerBtn.addEventListener("click", function() {
-    // Change l'état des boutons
-    cadreEnnemis.removeChild(presentation);
+jouer.addEventListener("click", function() {
+    cadreEnnemis.removeChild(jouer);
+    cadreEnnemis.removeChild(explication);
     cadreEnnemis.appendChild(bandit);
-    //arreterBtn.disabled = false;
-    // Démarre l'animation
     requestAnimationFrame(animerBandit);
 })
 
