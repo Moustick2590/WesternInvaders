@@ -38,4 +38,29 @@ demarrerBtn.addEventListener("click", function () {
     jouerBtn.disabled = false;
     //arreterBtn.disabled = true;
     cancelAnimationFrame(animationId);
+
 });*/
+
+
+// Fonction deplacement cowboy
+    document.onkeydown = function(event) {
+        if (event.keyCode == 37) gauche();
+        if (event.keyCode == 39) droite();
+    }
+    
+    // Variables déplacement
+    let cowboyX;
+    // A GAUCHE
+    function gauche() {
+        cowboyX = getComputedStyle(cowBoy).left;
+        cowboyX = parseInt(cowboyX) - 20;
+        cowboyX = cowboyX + "%";
+        cowBoy.style.left = cowboyX;
+    }
+    //A DROITE
+    function droite() { x = getComputedStyle(cowBoy).left;
+        cowboyX = getComputedStyle(cowBoy).left;
+        cowboyX = parseInt(cowboyX) + 20;
+        cowboyX = cowboyX + "%";
+        cowBoy.style.left = cowboyX;
+                      }
