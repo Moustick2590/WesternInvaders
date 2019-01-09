@@ -104,20 +104,21 @@ body main #boutonjouer {
 body main #boutonjouer:hover {
   opacity: 0.5;
 }
-body footer {
-  text-align: center;
-}
-body footer #cowboy {
-  position: absolute;
-  bottom: 0;
-  width: 3%;
-  height: 8%;
-}
-body footer #bullet {
+body main #bullet {
   width: 0.5%;
   height: 3%;
   position: absolute;
   margin-left: 2.2%;
+}
+
+footer {
+  text-align: center;
+}
+footer #cowboy {
+  position: absolute;
+  bottom: 0;
+  width: 3%;
+  height: 8%;
 }
 
 /*# sourceMappingURL=main.css.map */

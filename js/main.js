@@ -17,11 +17,22 @@ const diametreBandit = parseFloat(getComputedStyle(bandit).width); // Conversion
 let animationId = null; // Identifiant de l'animation
 let direction = 1; // Sens de déplacement: 1 droite, 2 gauche
 let yBandit = "";
-const presentation = document.getElementById('presentation');
 let newYBandit = "";
 cadreEnnemis.removeChild(bandit);
-
+const wantedList = document.getElementById("wantedlist");
 const vitesseBullet = 7;
+
+// defilement du texte
+function machineEcrire() {
+    document.getElementById('explication').innerHTML = message.substr(0, cour) + "<span id='test'>" + message.charAt(cour) + "</span>";
+    if (cour == message.length)
+        clearInterval(animation);
+    else
+        cour++;
+}
+message = "Bienvenue au Far West ! Le shérif est mort, vous êtes notre unique espoir de sauver notre ville de l'attaque des bandits. Pour cela, tirez avec la touche 'espace' et déplacez vous avec les flèches directionnelles 'gauche' et 'droite'.";
+cour = 0;
+animation = setInterval("machineEcrire()", 50);
 
 // D2place le bandit vers la gauche ou la droite
 function animerBandit() {
@@ -45,13 +56,19 @@ function animerBandit() {
     animationId = requestAnimationFrame(animerBandit);
 
 }
+// fonction changement bg
+function changeBackground(bElement, bUrl) {
+    return bElement.style.backgroundImage = "url(" + bUrl + ")", "cover", "no-repeat", "center";
+}
 
 // Ajout de la fonction sur le bouton jouer
 jouer.addEventListener("click", function() {
     cadreEnnemis.removeChild(jouer); // On enlève le bouton jouer
     cadreEnnemis.removeChild(explication); // On enlève le texte
     cadreEnnemis.appendChild(bandit); // On ajoute les bandits
+    cadreEnnemis.removeChild(wantedList); // On enleve les affiches wanted
     requestAnimationFrame(animerBandit); // On démarre l'animation des bandits
+    changeBackground(document.body, "images/bg_scene_1.jpg");
 })
 
 if (yBandit <= topCowboy) {
@@ -73,7 +90,7 @@ if (yBandit <= topCowboy) {
 document.onkeydown = function(event) {
     if (event.keyCode == 37) gauche();
     if (event.keyCode == 39) droite();
-    if (event.keyCode == 32) tir();
+    if (event.keyCode == 38) tir();
 }
 
 // Variables déplacement
@@ -109,31 +126,38 @@ function droite() {
 }*/
 
 //Debut tir 
-let myBullet = new Image();
-myBullet.src = 'images/bullet.png';
-myBullet.setAttribute("id", "bullet");
-cadreCowboy.appendChild(myBullet);
-const bullet = document.getElementById('bullet');
-let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
-bullet.style.bottom = topBullet + "px";
-let yBullet = "";
-let newYBullet = "";
+
+
+
 
 
 
 function tir() {
+    let myBullet = new Image();
+    myBullet.src = 'images/bullet.png';
+    myBullet.setAttribute("id", "bullet");
+    cadreEnnemis.appendChild(myBullet);
+    const bullet = document.getElementById('bullet');
+    let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
+    bullet.style.bottom = topBullet + "px";
 
-    yBullet = parseFloat(getComputedStyle(bullet).bottom);
+    let yBullet = "";
+    let newYBullet = "";
     //Si il y a une collision
-    newYBullet = (yBullet + vitesseBullet);
-    /*if (collision) {
+    function bulletMve() {
+        yBullet = parseFloat(getComputedStyle(bullet).bottom);
+        newYBullet = (yBullet + vitesseBullet);
 
-    } else {
-        
+        /*if (collision) {
 
-    }*/
-    bullet.style.bottom = (newYBullet + "px");
-    requestAnimationFrame(tir);
+        } else {
+            
+
+        }*/
+        bullet.style.bottom = (newYBullet + "px");
+        requestAnimationFrame(bulletMve);
+    }
+    requestAnimationFrame(bulletMve);
     //Tant que le bullet traverse l'écran 
     /*while (parseInt(bullet.style.bottom) > yMax) {
         

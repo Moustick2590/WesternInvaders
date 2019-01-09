@@ -103,20 +103,21 @@ body {
                 opacity: 0.5;
             }
         }
-    }
-    footer {
-        text-align: center;
-        #cowboy {
-            position: absolute;
-            bottom: 0;
-            width: 3%;
-            height: 8%;
-        }
         #bullet {
             width: 0.5%;
             height: 3%;
             position: absolute;
             margin-left: 2.2%;
         }
+    }
+}
+
+footer {
+    text-align: center;
+    #cowboy {
+        position: absolute;
+        bottom: 0;
+        width: 3%;
+        height: 8%;
     }
 }
