@@ -20,6 +20,20 @@ let yBandit = "";
 const presentation = document.getElementById('presentation');
 let newYBandit = "";
 cadreEnnemis.removeChild(bandit);
+const wantedList = document.getElementById("wantedlist");
+
+// defilement du texte
+function machineEcrire() { 
+     document.getElementById('explication').innerHTML=message.substr(0,cour)+"<span id='test'>"+message.charAt(cour)+"</span>";
+     if (cour==message.length)
+      clearInterval(animation);
+      else
+      cour++;
+        }
+        message = "Bienvenue au Far West ! Le shérif est mort, vous êtes notre unique espoir de sauver notre ville de l'attaque des bandits. Pour cela, tirez avec la touche 'espace' et déplacez vous avec les flèches directionnelles 'gauche' et 'droite'.";
+        cour=0;
+        animation=setInterval("machineEcrire()",50);
+
 
 // D2place le bandit vers la gauche ou la droite
 function animerBandit() {
@@ -43,29 +57,25 @@ function animerBandit() {
     animationId = requestAnimationFrame(animerBandit);
 
 }
+// fonction changement bg
+function changeBackground(bElement, bUrl) {
+    return bElement.style.backgroundImage = "url("+bUrl+")", "cover", "no-repeat", "center";
+}
 
 // Ajout de la fonction sur le bouton jouer
 jouer.addEventListener("click", function() {
     cadreEnnemis.removeChild(jouer); // On enlève le bouton jouer
     cadreEnnemis.removeChild(explication); // On enlève le texte
     cadreEnnemis.appendChild(bandit); // On ajoute les bandits
+    cadreEnnemis.removeChild(wantedList); // On enleve les affiches wanted
     requestAnimationFrame(animerBandit); // On démarre l'animation des bandits
-})
+    changeBackground(document.body, "images/bg_scene_1.jpg");
+   })
 
 if (yBandit <= topCowboy) {
     cancelAnimationFrame(animerBandit);
-
 }
-/*arreterBtn.addEventListener("click", function() {
-    demarrerBtn.disabled = false;
-    arreterBtn.disabled = true;
-    arreterBtn.addEventListener("click", function() {
-        jouerBtn.disabled = false;
-        //arreterBtn.disabled = true;
-        cancelAnimationFrame(animationId);
 
-    });
-});*/
 
 // Fonction deplacement cowboy
 document.onkeydown = function(event) {
@@ -105,7 +115,7 @@ function droite() {
 }*/
 
 //Debut tir 
-    let Bullet ={
+    /*let Bullet ={
         img.src = "../images/bullet.png";
         img.style.width = 10;
         img.style.height = 10;
@@ -118,5 +128,5 @@ function droite() {
     newBullet.style.left = cowboy.left;
     newBullet.style.top = cowboy.top;
     newBullet.style.top += 20;
-    }
+    }*/
 //Fin tir 
