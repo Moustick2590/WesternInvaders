@@ -94,5 +94,8 @@ body footer #cowboy {
   width: 3%;
   height: 6%;
 }
+body footer #bullet {
+  position: absolute;
+}
 
 /*# sourceMappingURL=main.css.map */

@@ -4,8 +4,6 @@ document.onkeydown = function(event) {
     if (event.keyCode == 32) tir();
     
     
-    
-//Debut tir 
     let Bullet ={
         img.src = "../images/bullet.png";
         img.style.width = 10;
@@ -15,17 +13,9 @@ document.onkeydown = function(event) {
     
     
     function tir () {
+    let newBullet =  Object.create(Bullet);
+    newBullet.style.left = cowboy.left;
+    newBullet.style.top = cowboy.top;
+    newBullet.style.top += 20;
+    }
     
-        //Tant que le bullet traverse l'écran 
-        while(bullet.style.bottom < (100% + bullet.style.height)){
-        
-            //Si il y a une collision
-            if (collision) {
-        
-            }
-            else {
-                bullet.style.bottom += 5%;
-                
-            }
-          }
-//Fin tir 

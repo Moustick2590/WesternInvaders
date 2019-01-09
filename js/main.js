@@ -105,18 +105,15 @@ function droite() {
 }*/
 
 //Debut tir 
-    let Bullet ={
-        img.src = "../images/bullet.png";
-        img.style.width = 10;
-        img.style.height = 10;
-        
-    };
-    
-    
-    function tir () {
-    let newBullet =  Object.create(Bullet);
-    newBullet.style.left = cowboy.left;
-    newBullet.style.top = cowboy.top;
-    newBullet.style.top += 20;
-    }
+ function Bullet (width, height, x, y){
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;
+}
+
+function tir (){
+   var bullet = new Bullet("10px", "10px", cowboy.style.);
+ 
+}
 //Fin tir 
