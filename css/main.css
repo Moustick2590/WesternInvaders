@@ -49,14 +49,20 @@ body main #jouer {
   background-size: cover;
 }
 body main #bandit {
-  position: relative;
-  left: 0;
-  width: 20%;
+  position: absolute;
+}
+body main #bandit .ligne_bandit {
+  display: flex;
+  justify-content: space-around;
+}
+body main #bandit #ligne_bandit_2 {
+  display: flex;
+  justify-content: space-between;
 }
 body main #bandit .bandits {
-  width: 15%;
-  height: 20%;
-  margin: 5%;
+  width: 5%;
+  height: 4%;
+  margin: 1%;
 }
 body main #boutonjouer {
   background-image: url(../images/wheel.png);
