@@ -5,9 +5,11 @@
 body {
   background-image: url("../images/bg_scene_2.jpg");
   background-size: cover;
+  background-position: center;
   width: 100%;
   margin: 0;
   font-family: "western";
+  font-size: 2.5em;
 }
 body header {
   display: flex;
@@ -19,34 +21,50 @@ body header {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  align-items: center;
 }
 body header h1 {
-  font-size: 5em;
+  font-size: 1.5em;
   letter-spacing: 3px;
-  margin-top: 10px;
+  margin-top: 1%;
   text-align: center;
   font-weight: 100;
-  margin-left: 70px;
+  margin-left: 10%;
+}
+body header h1 #logo {
+  width: 15%;
+  margin-right: 5%;
+  margin-top: 5%;
 }
 body header #moneysm {
   width: 25px;
   height: 35px;
 }
 body header #moneygd {
-  width: 35px;
-  height: 50px;
-}
-body header p {
-  font-size: 2.5em;
+  width: 40px;
+  height: 60px;
 }
 body main {
   display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 body main #jouer {
   background-image: url("../images/wheel.png");
   width: 10%;
   height: 10%;
   background-size: cover;
+}
+body main #wantedlist {
+  width: 100%;
+  margin-left: 8%;
+  margin-top: 3%;
+}
+body main #wantedlist .wanted {
+  width: 15%;
+  height: 90%;
 }
 body main #bandit {
   position: absolute;
@@ -60,9 +78,15 @@ body main #bandit #ligne_bandit_2 {
   justify-content: space-between;
 }
 body main #bandit .bandits {
-  width: 4%;
-  height: 3%;
-  margin: 1%;
+  width: 2%;
+  height: 4%;
+  margin: 0.5%;
+}
+body main #explication {
+  margin-top: 5%;
+  margin-left: 10%;
+  width: 70%;
+  text-align: justify;
 }
 body main #boutonjouer {
   background-image: url(../images/wheel.png);
@@ -71,18 +95,14 @@ body main #boutonjouer {
   background-size: contain;
   border: none;
   background-color: transparent;
-  padding: 55px;
+  padding: 45px;
   text-transform: uppercase;
   font-family: "western";
-  font-size: 3em;
-  justify-content: center;
-  align-content: center;
+  font-size: 1.5em;
+  margin-top: 3%;
 }
 body main #boutonjouer:hover {
   opacity: 0.5;
-}
-body main p {
-  font-size: 2.5em;
 }
 body footer {
   text-align: center;

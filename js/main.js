@@ -109,32 +109,21 @@ function droite() {
 }*/
 
 //Debut tir 
-let bullets = [];
-
-function Bullet() {
-    this.init = function() {
-        this.id = 'bullet',
-            this.src = 'images/bullet.png',
-            cadreCowboy.appendChild(this)
-    }
-}
-
-
-
-
+let myBullet = new Image();
+myBullet.src = 'images/bullet.png';
+myBullet.setAttribute("id", "bullet");
+cadreCowboy.appendChild(myBullet);
+const bullet = document.getElementById('bullet');
+let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
+bullet.style.bottom = topBullet + "px";
+let yBullet = "";
+let newYBullet = "";
 
 
 
 function tir() {
-    let newBullet = new Bullet();
-    newBullet.init();
+
     yBullet = parseFloat(getComputedStyle(bullet).bottom);
-    bullets.push(newBullet);
-    const bullet = document.getElementById('bullet');
-    let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
-    bullet.style.bottom = topBullet + "px";
-    let yBullet = "";
-    let newYBullet = "";
     //Si il y a une collision
     newYBullet = (yBullet + vitesseBullet);
     /*if (collision) {

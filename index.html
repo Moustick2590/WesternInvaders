@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Western Invaders</title>
-    <link rel="icon" type="Favicon" href="Favicon.gif" sizes="16x16">
+    <link rel="icon" type="Favicon" href="images/sherifstar.png" sizes="16x16">
     <meta name="description" content="Jeu Western Invaders">
     <meta name="twitter:card" content="Jeu Western Invaders" />
     <meta name="twitter:site" content="@WesternInvaders" />
@@ -25,54 +25,57 @@
     <header id="score">
         <p><img id="moneysm" src="images/smallmoneybag.png" alt="bourse d'argent" height="176" width="148"> score
         </p>
-        <h1>Western Invaders</h1>
+        <h1><img src="images/horseshoe.png" id="logo" alt="image d'un fer à cheval">Western Invaders</h1>
         <p><img id="moneygd" src="images/bigmoneybag.png" alt="bourse d'argent" height="276" width="232"> meilleur score
         </p>
 
     </header>
     <!--------------------------------------Ennemis--------------------------------------------------------------->
     <main id="cadre_ennemis">
-        <p id="explication">Bienvenue au Far West ! Vous devez sauver notre ville de l'attaque des bandits, pour cela, tirer avec la touche "espace" et déplacer vous avec les flèches directionnelles "gauche" et "droite"</p>
-        <button type="button" name="button" value="jouer" id="boutonjouer">jouer</button>
 
+        <div id="explication"></div>
+        <button type="button" name="button" value="jouer" id="boutonjouer">jouer</button>
+        <div id="wantedlist">
+            <img class="wanted" src="images/wanted_bandit1.png" alt="affiche d'un bandit recherché" width="342" height="401">
+            <img class="wanted" src="images/wanted_bandit4.png" alt="affiche d'un indien recherché" width="342" height="401">
+            <img class="wanted" src="images/wanted_bandit3.png" alt="affiche d'un indien recherché" width="342" height="401">
+            <img class="wanted" src="images/wanted_bandit6.png" alt="affiche d'un mexicain recherché" width="342" height="401">
+            <img class="wanted" src="images/wanted_bandit2.png" alt="affiche d'un bandit recherché" width="342" height="401">
+            <img class="wanted" src="images/wanted_bandit5.png" alt="affiche d'un bandit recherché" width="342" height="401">
+        </div>
 
         <div id="bandit">
             <div class="ligne_bandit">
-                <img class="bandits" src="images/bandit5.png" width="258" height="297">
-                <img class="bandits" src="images/bandit6.png" alt="" width="58" height="309">
-                <img class="bandits" src="images/bandit5.png" width="258" height="297">
-                <img class="bandits" src="images/bandit6.png" alt="" width="58" height="309">
-                <img class="bandits" src="images/bandit5.png" width="258" height="297">
-                <img class="bandits" src="images/bandit6.png" alt="" width="58" height="309">
+                <img class="bandits" src="images/bandit5.png" width="258" height="297" alt="bandit recherché">
+                <img class="bandits" src="images/bandit6.png" width="258" height="309" alt="mexicain recherché">
+                <img class="bandits" src="images/bandit5.png" width="258" height="297" alt="bandit recherché">
+                <img class="bandits" src="images/bandit6.png" width="258" height="309" alt="mexicain recherché">
+                <img class="bandits" src="images/bandit5.png" width="258" height="297" alt="bandit recherché">
+                <img class="bandits" src="images/bandit6.png" width="258" height="309" alt="mexicain recherché">
             </div>
             <div class="ligne_bandit" id="ligne_bandit_2">
-                <img class="bandits" src="images/bandit3.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit4.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit3.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit4.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit3.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit4.png" alt="" width="225" height="297">
+                <img class="bandits" src="images/bandit3.png" alt="indien recherché" width="225" height="297">
+                <img class="bandits" src="images/bandit4.png" alt="indien recherché" width="225" height="308">
+                <img class="bandits" src="images/bandit3.png" alt="indien recherché" width="225" height="297">
+                <img class="bandits" src="images/bandit4.png" alt="indien recherché" width="225" height="308">
+                <img class="bandits" src="images/bandit3.png" alt="indien recherché" width="225" height="297">
+                <img class="bandits" src="images/bandit4.png" alt="indien recherché" width="225" height="308">
             </div>
             <div class="ligne_bandit">
-                <img class="bandits" src="images/bandit1.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit2.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit1.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit2.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit1.png" alt="" width="225" height="297">
-                <img class="bandits" src="images/bandit2.png" alt="" width="225" height="297">
+                <img class="bandits" src="images/bandit1.png" alt="bandit recherché" width="225" height="297">
+                <img class="bandits" src="images/bandit2.png" alt="bandit recherché" width="225" height="297">
+                <img class="bandits" src="images/bandit1.png" alt="bandit recherché" width="225" height="297">
+                <img class="bandits" src="images/bandit2.png" alt="bandit recherché" width="225" height="297">
+                <img class="bandits" src="images/bandit1.png" alt="bandit recherché" width="225" height="297">
+                <img class="bandits" src="images/bandit2.png" alt="bandit recherché" width="225" height="297">
             </div>
         </div>
-
-
-
 
     </main>
     <!------------------------------------Héros----------------------------------------------------------------->
     <footer id="cadre_cowboy">
 
         <img src="images/cowboy.png" alt="cowboy" width="259" height="339" id="cowboy">
-
-
         <script src="js/main.js"></script>
     </footer>
 </body>
