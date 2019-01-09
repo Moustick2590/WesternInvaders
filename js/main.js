@@ -104,3 +104,19 @@ function droite() {
     // collision détectée !
 }*/
 
+//Debut tir 
+    let Bullet ={
+        img.src = "../images/bullet.png";
+        img.style.width = 10;
+        img.style.height = 10;
+        
+    };
+    
+    
+    function tir () {
+    let newBullet =  Object.create(Bullet);
+    newBullet.style.left = cowboy.left;
+    newBullet.style.top = cowboy.top;
+    newBullet.style.top += 20;
+    }
+//Fin tir 
