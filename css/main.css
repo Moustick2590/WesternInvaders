@@ -85,14 +85,19 @@ body main p {
   font-size: 2.5em;
 }
 body footer {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 body footer #cowboy {
   position: absolute;
   bottom: 0;
   width: 3%;
   height: 6%;
+}
+body footer #bullet {
+  width: 2%;
+  height: 3%;
+  position: absolute;
+  margin-left: 2.2%;
 }
 
 /*# sourceMappingURL=main.css.map */

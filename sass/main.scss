@@ -10,7 +10,6 @@ body {
     width: 100%;
     margin: 0;
     font-family: "western";
-
     header {
         display: flex;
         justify-content: space-around;
@@ -21,7 +20,6 @@ body {
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
-
         h1 {
             font-size: 5em;
             letter-spacing: 3px;
@@ -30,35 +28,28 @@ body {
             font-weight: 100;
             margin-left: 70px;
         }
-
         #moneysm {
             width: 25px;
             height: 35px;
         }
-
         #moneygd {
             width: 35px;
             height: 50px;
         }
-
         p {
             font-size: 2.5em;
         }
     }
-
     main {
         display: flex;
-
         #jouer {
             background-image: url('../images/wheel.png');
             width: 10%;
             height: 10%;
             background-size: cover;
         }
-
         #bandit {
             position: absolute;
-
             .ligne_bandit {
                 display: flex;
                 justify-content: space-around;
@@ -67,14 +58,12 @@ body {
                 display: flex;
                 justify-content: space-between;
             }
-
             .bandits {
                 width: 5%;
                 height: 4%;
                 margin: 1%;
             }
         }
-
         #boutonjouer {
             background-image: url(../images/wheel.png);
             background-repeat: no-repeat;
@@ -88,26 +77,27 @@ body {
             font-size: 3em;
             justify-content: center;
             align-content: center;
-
             &:hover {
                 opacity: 0.5;
             }
         }
-
         p {
             font-size: 2.5em;
         }
     }
-
     footer {
-        display: flex;
-        justify-content: center;
-
+        text-align: center;
         #cowboy {
             position: absolute;
             bottom: 0;
             width: 3%;
             height: 6%;
+        }
+        #bullet {
+            width: 2%;
+            height: 3%;
+            position: absolute;
+            margin-left: 2.2%;
         }
     }
 }

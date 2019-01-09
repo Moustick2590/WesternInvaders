@@ -20,6 +20,9 @@ let yBandit = "";
 const presentation = document.getElementById('presentation');
 let newYBandit = "";
 cadreEnnemis.removeChild(bandit);
+const bullet = document.getElementById('bullet');
+let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
+bullet.style.bottom = topBullet + "px";
 
 // D2place le bandit vers la gauche ou la droite
 function animerBandit() {
@@ -28,7 +31,7 @@ function animerBandit() {
     // Position basse du bloc
     yBandit = parseFloat(getComputedStyle(bandit).bottom);
 
-    
+
     // Si le ballon arrive a un bord du cadre
     if (((xBandit + diametreBandit) >= xMaxBandit) || (xBandit < xMin)) {
         // On inverse le sens de déplacement
@@ -84,6 +87,7 @@ function gauche() {
         cowboyX = 0;
     };
     cowboy.style.left = cowboyX + "px";
+    bullet.style.left = cowboyX + "px";
 }
 //A DROITE
 function droite() {
@@ -93,6 +97,7 @@ function droite() {
         cowboyX = xMaxCowboy - diametreCowboy;
     };
     cowboy.style.left = cowboyX + "px";
+    bullet.style.left = cowboyX + "px";
 }
 
 // Collision des bandits avec le cowboy
@@ -105,18 +110,16 @@ function droite() {
 }*/
 
 //Debut tir 
-    let Bullet ={
-        img.src = "../images/bullet.png";
-        img.style.width = 10;
-        img.style.height = 10;
-        
-    };
-    
-    
-    function tir () {
-    let newBullet =  Object.create(Bullet);
-    newBullet.style.left = cowboy.left;
-    newBullet.style.top = cowboy.top;
-    newBullet.style.top += 20;
+/*let Bullet = {
+    init: function(img) {
+        this.img = src("../images/bullet.png")
     }
-//Fin tir 
+};*/
+
+
+
+function tir() {
+
+    bullet.style.top += 20;
+}
+//Fin tir
