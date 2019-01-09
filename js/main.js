@@ -12,7 +12,7 @@ const cadreEnnemis = document.getElementById("cadre_ennemis");
 const xMaxBandit = parseFloat(getComputedStyle(cadreEnnemis).width);
 const bandit = document.getElementById("bandit");
 let xBandit = "";
-const vitesse = 5; // Valeur du déplacement en pixels
+const vitesseBandit = 5; // Valeur du déplacement en pixels
 const diametreBandit = parseFloat(getComputedStyle(bandit).width); // Conversion en nombre du diametre du bandit
 let animationId = null; // Identifiant de l'animation
 let direction = 1; // Sens de déplacement: 1 droite, 2 gauche
@@ -20,9 +20,8 @@ let yBandit = "";
 const presentation = document.getElementById('presentation');
 let newYBandit = "";
 cadreEnnemis.removeChild(bandit);
-const bullet = document.getElementById('bullet');
-let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
-bullet.style.bottom = topBullet + "px";
+
+const vitesseBullet = 7;
 
 // D2place le bandit vers la gauche ou la droite
 function animerBandit() {
@@ -41,7 +40,7 @@ function animerBandit() {
     // On descend le cadre
     bandit.style.bottom = newYBandit + "px";
     // Déplacement du bandit dans le sens actuel
-    bandit.style.left = (xBandit + vitesse * direction) + "px";
+    bandit.style.left = (xBandit + vitesseBandit * direction) + "px";
     // Demande au navigateur d'appeler animerBandit dès que possible
     animationId = requestAnimationFrame(animerBandit);
 
@@ -110,16 +109,45 @@ function droite() {
 }*/
 
 //Debut tir 
-/*let Bullet = {
-    init: function(img) {
-        this.img = src("../images/bullet.png")
+let bullets = [];
+
+function Bullet() {
+    this.init = function() {
+        this.id = 'bullet',
+            this.src = 'images/bullet.png',
+            cadreCowboy.appendChild(this)
     }
-};*/
+}
+
+
+
+
 
 
 
 function tir() {
+    let newBullet = new Bullet();
+    newBullet.init();
+    yBullet = parseFloat(getComputedStyle(bullet).bottom);
+    bullets.push(newBullet);
+    const bullet = document.getElementById('bullet');
+    let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
+    bullet.style.bottom = topBullet + "px";
+    let yBullet = "";
+    let newYBullet = "";
+    //Si il y a une collision
+    newYBullet = (yBullet + vitesseBullet);
+    /*if (collision) {
 
-    bullet.style.top += 20;
+    } else {
+        
+
+    }*/
+    bullet.style.bottom = (newYBullet + "px");
+    requestAnimationFrame(tir);
+    //Tant que le bullet traverse l'écran 
+    /*while (parseInt(bullet.style.bottom) > yMax) {
+        
+    }*/
 }
 //Fin tir
