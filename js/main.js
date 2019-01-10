@@ -1,5 +1,6 @@
 /* fonction jouer */
 const jouer = document.getElementById("boutonjouer");
+const rejouerBtn = document.getElementById('rejouer');
 const explication = document.getElementById("explication");
 const cadreCowboy = document.getElementById("cadre_cowboy");
 const cowboy = document.getElementById("cowboy");
@@ -23,7 +24,7 @@ const wantedList = document.getElementById("wantedlist");
 const vitesseBullet = 4;
 
 // defilement du texte
-function machineEcrire() {
+/*function machineEcrire() {
     document.getElementById('explication').innerHTML = message.substr(0, cour) + "<span id='test'>" + message.charAt(cour) + "</span>";
     if (cour == message.length)
         clearInterval(animation);
@@ -32,7 +33,7 @@ function machineEcrire() {
 }
 message = "Bienvenue au Far West ! Le shérif est mort, vous êtes notre unique espoir de sauver notre ville de l'attaque des bandits. Pour cela, tirez avec la touche 'espace' et déplacez vous avec les flèches directionnelles 'gauche' et 'droite'.";
 cour = 0;
-animation = setInterval("machineEcrire()", 50);
+animation = setInterval("machineEcrire()", 50);*/
 
 //Ennemis
 function genBandit() {
@@ -74,7 +75,7 @@ function genBandit() {
         }
         bandit.setAttribute("class", "bandit");
         bandit.id = 'bandit' + i;
-        bandit.style.width = bandits.offsetWidth / 8 + "px";
+        bandit.style.width = bandits.offsetWidth / 12 + "px";
         bandit.style.margin = bandits.offsetWidth / 64 + "px";
         bandit.style.display = "inline-block";
 
@@ -92,8 +93,7 @@ function animerBandits() {
     yBandits = parseFloat(getComputedStyle(bandits).bottom);
 
     if (yBandits <= topCowboy) {
-        let btnRejouer = document.createElement('button');
-        cadreJeu.removeChild(bandits);
+        return gameOver();
     }
     // Si le ballon arrive a un bord du cadre
     if (((xBandits + diametreBandits) >= xMaxBandits) || (xBandits < xMin)) {
@@ -125,6 +125,12 @@ jouer.addEventListener("click", function() {
     wantedList.style.display = "none"; // On enleve les affiches wanted
     requestAnimationFrame(animerBandits); // On démarre l'animation des bandits
     changeBackground(document.body, "images/bg_scene_1.jpg");
+})
+
+rejouerBtn.addEventListener("click", function() {
+    cadreJeu.appendChild(bandits);
+    genBandit();
+    rejouerBtn.style.display = "none";
 })
 
 
@@ -232,10 +238,8 @@ function tir() {
 
 
 function gameOver() {
-    const rejouerBtn = document.getElementById(rejouer);
-    rejouerBtn.style.display = "block";
-    changeBackground(document.body, "images/bg_scene_2.jpg");
-    mozCancelAnimationFrame(animerBandits);
+
+    cancelAnimationFrame(animerBandits);
     cadreJeu.removeChild(bandits);
     const rejouerBtn = document.getElementById(rejouer);
     rejouerBtn.style.display = "block";

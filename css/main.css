@@ -140,32 +140,26 @@ body main #rejouer:hover {
 body main #rejouer #textgameover {
   font-size: 2em;
 }
-body main #cadre_jeu {
+body #cadre_jeu {
   width: 100%;
 }
-body main #cadre_jeu #bandits {
+body #cadre_jeu #bandits {
   position: absolute;
+  width: 60%;
 }
-body main #cadre_jeu #bandits .ligne_bandit {
-  display: flex;
-  justify-content: space-around;
+body #cadre_jeu #bandits .bandit {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
 }
-body main #cadre_jeu #bandits #ligne_bandit_2 {
-  display: flex;
-  justify-content: space-between;
-}
-body main #cadre_jeu #bandits .bandit {
-  width: 3%;
-  height: 6%;
-  margin: 0.5%;
-}
-body main #cadre_jeu #bullet {
+body #cadre_jeu #bullet {
   width: 0.5%;
   height: 3%;
   position: absolute;
   margin-left: 2.2%;
 }
-body main #cadre_jeu #cowboy {
+body #cadre_jeu #cowboy {
   position: absolute;
   left: 48%;
   bottom: 0;
