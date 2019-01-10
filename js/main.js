@@ -116,7 +116,7 @@ function animerBandits() {
 }
 // fonction changement bg
 function changeBackground(bElement, bUrl) {
-    return bElement.style.backgroundImage = "url(" + bUrl + ")";
+    return bElement.style.background = "url(" + bUrl + ")";
 }
 
 
@@ -252,6 +252,7 @@ function tir() {
     }
 }
 
+
 function gameOver() {
 
     rejouerBtn.style.display = "block";
@@ -263,5 +264,11 @@ function gameOver() {
     if (score > scoreMax) {
         scoreMax = score;
     }
-
 }
+/*function bravo() {
+    const bravoRejouer = document.getElementById(bravo_rejouer);
+    bravoRejouer.style.display = "block";
+    changeBackground(document.body, "images/bg_scene_2.jpg");
+    cadreJeu.removeChild(bandits);
+    rejouerBtn.style.display = none;
+}*/

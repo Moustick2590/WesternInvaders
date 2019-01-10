@@ -11,7 +11,6 @@ body {
     margin: 0;
     font-family: "western";
     font-size: 2.5em;
-
     header {
         display: flex;
         justify-content: space-around;
@@ -23,7 +22,6 @@ body {
         background-size: contain;
         background-position: center;
         align-items: center;
-
         h1 {
             font-size: 1.5em;
             letter-spacing: 3px;
@@ -31,59 +29,78 @@ body {
             text-align: center;
             font-weight: 100;
             margin-left: 10%;
-
+            text-transform: uppercase;
             #logo {
                 width: 15%;
                 margin-right: 5%;
                 margin-top: 5%;
             }
         }
-
         #moneysm {
             width: 25px;
             height: 35px;
         }
-
         #moneygd {
             width: 40px;
             height: 60px;
         }
     }
-
     main {
         display: flex;
-        width: 100%;
-
+        #bandits {
+            position: absolute;
+            width: 60%;
+            .bandit {
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 60px;
+            }
+        }
+        #bravo_rejouer {
+            background-image: url(../images/sherifstar.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            border: none;
+            background-color: transparent;
+            padding: 80px;
+            text-transform: uppercase;
+            font-family: "western";
+            font-size: 1.5em;
+            margin-top: 3%;
+            display: none;
+            &:hover {
+                opacity: 0.5;
+            }
+            #textbravo {
+                font-size: 0.8em;
+            }
+        }
         #jouer {
             background-image: url('../images/wheel.png');
             width: 10%;
             height: 10%;
             background-size: cover;
         }
-
         align-content: center;
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
-
         #wantedlist {
             width: 100%;
             margin-left: 8%;
             margin-top: 3%;
-
             .wanted {
                 width: 15%;
                 height: 90%;
             }
         }
-
         #explication {
             margin-top: 5%;
             margin-left: 10%;
             width: 70%;
             text-align: justify;
         }
-
         #boutonjouer {
             background-image: url(../images/wheel.png);
             background-repeat: no-repeat;
@@ -96,12 +113,10 @@ body {
             font-family: "western";
             font-size: 1.5em;
             margin-top: 3%;
-
             &:hover {
                 opacity: 0.5;
             }
         }
-
         #rejouer {
             background-image: url(../images/buffaloskull.png);
             background-repeat: no-repeat;
@@ -117,24 +132,19 @@ body {
             font-size: 0.9em;
             margin-top: 3%;
             display: none;
-
             &:hover {
                 opacity: 0.5;
             }
-
             #textgameover {
                 font-size: 2em;
             }
         }
     }
-
     #cadre_jeu {
         width: 100%;
-
         #bandits {
             position: absolute;
             width: 60%;
-
             .bandit {
                 background-size: contain;
                 background-repeat: no-repeat;
@@ -142,7 +152,6 @@ body {
                 height: 80px;
             }
         }
-
         #bullet {
             position: absolute;
             margin-left: 2.2%;
@@ -152,7 +161,6 @@ body {
                 height: 5%;
             }
         }
-
         #cowboy {
             position: absolute;
             left: 48%;
@@ -161,12 +169,7 @@ body {
             height: 9%;
         }
     }
-
-
     footer {
-        p {
-            font-size: 0.5em;
-            text-align: center;
-        }
+        display: flex;
     }
 }

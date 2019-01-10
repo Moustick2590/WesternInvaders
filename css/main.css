@@ -30,6 +30,7 @@ body header h1 {
   text-align: center;
   font-weight: 100;
   margin-left: 10%;
+  text-transform: uppercase;
 }
 body header h1 #logo {
   width: 15%;
@@ -46,11 +47,39 @@ body header #moneygd {
 }
 body main {
   display: flex;
-  width: 100%;
   align-content: center;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+}
+body main #bandits {
+  position: absolute;
+  width: 60%;
+}
+body main #bandits .bandit {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 60px;
+}
+body main #bravo_rejouer {
+  background-image: url(../images/sherifstar.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  padding: 80px;
+  text-transform: uppercase;
+  font-family: "western";
+  font-size: 1.5em;
+  margin-top: 3%;
+  display: none;
+}
+body main #bravo_rejouer:hover {
+  opacity: 0.5;
+}
+body main #bravo_rejouer #textbravo {
+  font-size: 0.8em;
 }
 body main #jouer {
   background-image: url("../images/wheel.png");
@@ -140,9 +169,8 @@ body #cadre_jeu #cowboy {
   width: 4%;
   height: 9%;
 }
-body footer p {
-  font-size: 0.5em;
-  text-align: center;
+body footer {
+  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */
