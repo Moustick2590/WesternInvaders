@@ -23,7 +23,7 @@ const wantedList = document.getElementById("wantedlist");
 const vitesseBullet = 7;
 
 // defilement du texte
-function machineEcrire() {
+/*function machineEcrire() {
     document.getElementById('explication').innerHTML = message.substr(0, cour) + "<span id='test'>" + message.charAt(cour) + "</span>";
     if (cour == message.length)
         clearInterval(animation);
@@ -32,7 +32,7 @@ function machineEcrire() {
 }
 message = "Bienvenue au Far West ! Le shérif est mort, vous êtes notre unique espoir de sauver notre ville de l'attaque des bandits. Pour cela, tirez avec la touche 'espace' et déplacez vous avec les flèches directionnelles 'gauche' et 'droite'.";
 cour = 0;
-animation = setInterval("machineEcrire()", 50);
+animation = setInterval("machineEcrire()", 50);*/
 
 // D2place le bandit vers la gauche ou la droite
 function animerBandit() {
@@ -54,6 +54,7 @@ function animerBandit() {
     bandit.style.left = (xBandit + vitesseBandit * direction) + "px";
     // Demande au navigateur d'appeler animerBandit dès que possible
     animationId = requestAnimationFrame(animerBandit);
+    
 
 }
 // fonction changement bg
@@ -71,10 +72,7 @@ jouer.addEventListener("click", function() {
     changeBackground(document.body, "images/bg_scene_1.jpg");
 })
 
-if (yBandit <= topCowboy) {
-    cancelAnimationFrame(animerBandit);
 
-}
 /*arreterBtn.addEventListener("click", function() {
     demarrerBtn.disabled = false;
     arreterBtn.disabled = true;
