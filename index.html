@@ -23,17 +23,16 @@
 <body>
     <!------------------------------------Score, Titre, Meilleur Score------------------------------------------>
     <header id="score">
-        <p><img id="moneysm" src="images/smallmoneybag.png" alt="bourse d'argent" height="176" width="148"> score
+        <p id="score"><img id="moneysm" src="images/smallmoneybag.png" alt="bourse d'argent" height="176" width="148"> score
         </p>
         <h1><img src="images/horseshoe.png" id="logo" alt="image d'un fer à cheval">Western Invaders</h1>
-        <p><img id="moneygd" src="images/bigmoneybag.png" alt="bourse d'argent" height="276" width="232"> meilleur score
+        <p id="scoremax"><img id="moneygd" src="images/bigmoneybag.png" alt="bourse d'argent" height="276" width="232"> meilleur score
         </p>
 
     </header>
-    <div id="jeu">
-    <!--------------------------------------Ennemis--------------------------------------------------------------->
-    <main id="cadre_ennemis">
 
+    <main>
+        <button type="button" id="rejouer"><span id="textgameover">game over</span><br>rejouer</button>
         <div id="explication"></div>
         <button type="button" name="button" value="jouer" id="boutonjouer">jouer</button>
         <div id="wantedlist">
@@ -44,46 +43,23 @@
             <img class="wanted" src="images/wanted_bandit2.png" alt="affiche d'un bandit recherché" width="342" height="401">
             <img class="wanted" src="images/wanted_bandit5.png" alt="affiche d'un bandit recherché" width="342" height="401">
         </div>
+        <!--------------------------------------Ennemis--------------------------------------------------------------->
+        <div id="cadre_jeu">
+            <div id="bandits">
 
-        <div id="bandit">
-            <div class="ligne_bandit">
-                <img class="bandits" src="images/bandit5.png" width="258" height="297" alt="bandit recherché">
-                <img class="bandits" src="images/bandit6.png" width="258" height="309" alt="mexicain recherché">
-                <img class="bandits" src="images/bandit5.png" width="258" height="297" alt="bandit recherché">
-                <img class="bandits" src="images/bandit6.png" width="258" height="309" alt="mexicain recherché">
-                <img class="bandits" src="images/bandit5.png" width="258" height="297" alt="bandit recherché">
-                <img class="bandits" src="images/bandit6.png" width="258" height="309" alt="mexicain recherché">
             </div>
-            <div class="ligne_bandit" id="ligne_bandit_2">
-                <img class="bandits" src="images/bandit3.png" alt="indien recherché" width="225" height="297">
-                <img class="bandits" src="images/bandit4.png" alt="indien recherché" width="225" height="308">
-                <img class="bandits" src="images/bandit3.png" alt="indien recherché" width="225" height="297">
-                <img class="bandits" src="images/bandit4.png" alt="indien recherché" width="225" height="308">
-                <img class="bandits" src="images/bandit3.png" alt="indien recherché" width="225" height="297">
-                <img class="bandits" src="images/bandit4.png" alt="indien recherché" width="225" height="308">
-            </div>
-            <div class="ligne_bandit">
-                <img class="bandits" src="images/bandit1.png" alt="bandit recherché" width="225" height="297">
-                <img class="bandits" src="images/bandit2.png" alt="bandit recherché" width="225" height="297">
-                <img class="bandits" src="images/bandit1.png" alt="bandit recherché" width="225" height="297">
-                <img class="bandits" src="images/bandit2.png" alt="bandit recherché" width="225" height="297">
-                <img class="bandits" src="images/bandit1.png" alt="bandit recherché" width="225" height="297">
-                <img class="bandits" src="images/bandit2.png" alt="bandit recherché" width="225" height="297">
+            <!------------------------------------Héros----------------------------------------------------------------->
+            <div id="cadre_cowboy">
+                <img src="images/cowboy.png" alt="cowboy" width="259" height="339" id="cowboy">
             </div>
         </div>
-
     </main>
-    <!------------------------------------Héros----------------------------------------------------------------->
-    <footer id="cadre_cowboy">
 
-        <img src="images/cowboy.png" alt="cowboy" width="259" height="339" id="cowboy">
-        <script src="js/main.js"></script>
+    <footer>
+        <p>Created by CoralieL, Marie-AngeR et AurelienC</p>
+
     </footer>
-</div>
+    <script src="js/main.js"></script>
 </body>
-
-
-
-
 
 </html>
