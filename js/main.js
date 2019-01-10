@@ -12,28 +12,27 @@ const cadreEnnemis = document.getElementById("cadre_ennemis");
 const xMaxBandit = parseFloat(getComputedStyle(cadreEnnemis).width);
 const bandit = document.getElementById("bandit");
 let xBandit = "";
-const vitesse = 5; // Valeur du déplacement en pixels
+const vitesseBandit = 5; // Valeur du déplacement en pixels
 const diametreBandit = parseFloat(getComputedStyle(bandit).width); // Conversion en nombre du diametre du bandit
 let animationId = null; // Identifiant de l'animation
 let direction = 1; // Sens de déplacement: 1 droite, 2 gauche
 let yBandit = "";
-const presentation = document.getElementById('presentation');
 let newYBandit = "";
 cadreEnnemis.removeChild(bandit);
 const wantedList = document.getElementById("wantedlist");
+const vitesseBullet = 7;
 
 // defilement du texte
-function machineEcrire() { 
-     document.getElementById('explication').innerHTML=message.substr(0,cour)+"<span id='test'>"+message.charAt(cour)+"</span>";
-     if (cour==message.length)
-      clearInterval(animation);
-      else
-      cour++;
-        }
-        message = "Bienvenue au Far West ! Le shérif est mort, vous êtes notre unique espoir de sauver notre ville de l'attaque des bandits. Pour cela, tirez avec la touche 'espace' et déplacez vous avec les flèches directionnelles 'gauche' et 'droite'.";
-        cour=0;
-        animation=setInterval("machineEcrire()",50);
-
+function machineEcrire() {
+    document.getElementById('explication').innerHTML = message.substr(0, cour) + "<span id='test'>" + message.charAt(cour) + "</span>";
+    if (cour == message.length)
+        clearInterval(animation);
+    else
+        cour++;
+}
+message = "Bienvenue au Far West ! Le shérif est mort, vous êtes notre unique espoir de sauver notre ville de l'attaque des bandits. Pour cela, tirez avec la touche 'espace' et déplacez vous avec les flèches directionnelles 'gauche' et 'droite'.";
+cour = 0;
+animation = setInterval("machineEcrire()", 50);
 
 // D2place le bandit vers la gauche ou la droite
 function animerBandit() {
@@ -42,7 +41,7 @@ function animerBandit() {
     // Position basse du bloc
     yBandit = parseFloat(getComputedStyle(bandit).bottom);
 
-    
+
     // Si le ballon arrive a un bord du cadre
     if (((xBandit + diametreBandit) >= xMaxBandit) || (xBandit < xMin)) {
         // On inverse le sens de déplacement
@@ -52,14 +51,14 @@ function animerBandit() {
     // On descend le cadre
     bandit.style.bottom = newYBandit + "px";
     // Déplacement du bandit dans le sens actuel
-    bandit.style.left = (xBandit + vitesse * direction) + "px";
+    bandit.style.left = (xBandit + vitesseBandit * direction) + "px";
     // Demande au navigateur d'appeler animerBandit dès que possible
     animationId = requestAnimationFrame(animerBandit);
 
 }
 // fonction changement bg
 function changeBackground(bElement, bUrl) {
-    return bElement.style.backgroundImage = "url("+bUrl+")", "cover", "no-repeat", "center";
+    return bElement.style.backgroundImage = "url(" + bUrl + ")", "cover", "no-repeat", "center";
 }
 
 // Ajout de la fonction sur le bouton jouer
@@ -70,18 +69,28 @@ jouer.addEventListener("click", function() {
     cadreEnnemis.removeChild(wantedList); // On enleve les affiches wanted
     requestAnimationFrame(animerBandit); // On démarre l'animation des bandits
     changeBackground(document.body, "images/bg_scene_1.jpg");
-   })
+})
 
 if (yBandit <= topCowboy) {
     cancelAnimationFrame(animerBandit);
-}
 
+}
+/*arreterBtn.addEventListener("click", function() {
+    demarrerBtn.disabled = false;
+    arreterBtn.disabled = true;
+    arreterBtn.addEventListener("click", function() {
+        jouerBtn.disabled = false;
+        //arreterBtn.disabled = true;
+        cancelAnimationFrame(animationId);
+
+    });
+});*/
 
 // Fonction deplacement cowboy
 document.onkeydown = function(event) {
     if (event.keyCode == 37) gauche();
     if (event.keyCode == 39) droite();
-    if (event.keyCode == 32) tir();
+    if (event.keyCode == 38) tir();
 }
 
 // Variables déplacement
@@ -94,6 +103,7 @@ function gauche() {
         cowboyX = 0;
     };
     cowboy.style.left = cowboyX + "px";
+    bullet.style.left = cowboyX + "px";
 }
 //A DROITE
 function droite() {
@@ -103,6 +113,7 @@ function droite() {
         cowboyX = xMaxCowboy - diametreCowboy;
     };
     cowboy.style.left = cowboyX + "px";
+    bullet.style.left = cowboyX + "px";
 }
 
 // Collision des bandits avec le cowboy
@@ -115,6 +126,7 @@ function droite() {
 }*/
 
 //Debut tir 
+<<<<<<< HEAD
 <<<<<<< HEAD
  function Bullet (width, height, x, y){
     this.width = width;
@@ -132,15 +144,48 @@ function tir (){
         img.src = "../images/bullet.png";
         img.style.width = 10;
         img.style.height = 10;
+=======
+
+
+
+
+
+
+function tir() {
+    let myBullet = new Image();
+    myBullet.src = 'images/bullet.png';
+    myBullet.setAttribute("id", "bullet");
+    cadreEnnemis.appendChild(myBullet);
+    const bullet = document.getElementById('bullet');
+    let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
+    bullet.style.bottom = topBullet + "px";
+
+    let yBullet = "";
+    let newYBullet = "";
+    //Si il y a une collision
+    function bulletMve() {
+        yBullet = parseFloat(getComputedStyle(bullet).bottom);
+        newYBullet = (yBullet + vitesseBullet);
+
+        /*if (collision) {
+
+        } else {
+            
+
+        }*/
+        bullet.style.bottom = (newYBullet + "px");
+        requestAnimationFrame(bulletMve);
+    }
+    requestAnimationFrame(bulletMve);
+    //Tant que le bullet traverse l'écran 
+    /*while (parseInt(bullet.style.bottom) > yMax) {
+>>>>>>> a0a29b18d9586e3fc9783a6c9c539c772a52ebfa
         
-    };
-    
-    
-    function tir () {
-    let newBullet =  Object.create(Bullet);
-    newBullet.style.left = cowboy.left;
-    newBullet.style.top = cowboy.top;
-    newBullet.style.top += 20;
     }*/
+<<<<<<< HEAD
 >>>>>>> 9087b79ade1ddd247f9520a35684f9e25c0ecc58
 //Fin tir 
+=======
+}
+//Fin tir
+>>>>>>> a0a29b18d9586e3fc9783a6c9c539c772a52ebfa

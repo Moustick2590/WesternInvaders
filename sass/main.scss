@@ -4,7 +4,6 @@
 }
 
 body {
-
     background-image: url("../images/bg_scene_2.jpg");
     background-size: cover;
     background-position: center;
@@ -12,7 +11,6 @@ body {
     margin: 0;
     font-family: "western";
     font-size: 2.5em;
-
     header {
         display: flex;
         justify-content: space-around;
@@ -24,7 +22,6 @@ body {
         background-size: contain;
         background-position: center;
         align-items: center;
-
         h1 {
             font-size: 1.5em;
             letter-spacing: 3px;
@@ -32,107 +29,100 @@ body {
             text-align: center;
             font-weight: 100;
             margin-left: 10%;
-        #logo
-            {
+            #logo {
                 width: 15%;
                 margin-right: 5%;
                 margin-top: 5%;
             }
         }
-               
-
         #moneysm {
             width: 25px;
             height: 35px;
         }
-
         #moneygd {
             width: 40px;
             height: 60px;
         }
     }
-
     main {
         display: flex;
+        #jouer {
+            background-image: url('../images/wheel.png');
+            width: 10%;
+            height: 10%;
+            background-size: cover;
+        }
         align-content: center;
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
-
-        #wantedlist
-        {
+        #wantedlist {
             width: 100%;
             margin-left: 8%;
             margin-top: 3%;
-                    
-        .wanted
-        {      
-            width: 15%;
-            height: 90%;
-        }}
-        
+            .wanted {
+                width: 15%;
+                height: 90%;
+            }
+        }
         #bandit {
             position: absolute;
-
             .ligne_bandit {
                 display: flex;
                 justify-content: space-around;
             }
-
             #ligne_bandit_2 {
                 display: flex;
                 justify-content: space-between;
             }
-
             .bandits {
                 width: 2%;
                 height: 4%;
                 margin: 0.5%;
             }
         }
-
         #explication {
             margin-top: 5%;
             margin-left: 10%;
             width: 70%;
             text-align: justify;
-            
-}
-            #boutonjouer {
-                background-image: url(../images/wheel.png);
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: contain;
-                border: none;
-                background-color: transparent;
-                padding: 45px;
-                text-transform: uppercase;
-                font-family: "western";
-                font-size: 1.5em;
-                margin-top: 3%;
-               
-                &:hover {
-                    opacity: 0.5;
-                }
+        }
+        #boutonjouer {
+            background-image: url(../images/wheel.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            border: none;
+            background-color: transparent;
+            padding: 45px;
+            text-transform: uppercase;
+            font-family: "western";
+            font-size: 1.5em;
+            margin-top: 3%;
+            &:hover {
+                opacity: 0.5;
             }
-        
-
-    }
-
-    footer {
-        display: flex;
-        justify-content: center;
-
-        #cowboy {
+        }
+        #bullet {
+            width: 0.5%;
+            height: 3%;
             position: absolute;
-            bottom: 0;
-            width: 3%;
-            height: 6%;
+            margin-left: 2.2%;
         }
         
         #bullet {
             position: absolute;
             
         }
+    }
+}
+
+footer {
+    text-align: center;
+    #cowboy {
+        position: absolute;
+        bottom: 0;
+        width: 3%;
+        height: 8%;
     }
 }

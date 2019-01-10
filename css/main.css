@@ -51,6 +51,12 @@ body main {
   flex-direction: row;
   flex-wrap: wrap;
 }
+body main #jouer {
+  background-image: url("../images/wheel.png");
+  width: 10%;
+  height: 10%;
+  background-size: cover;
+}
 body main #wantedlist {
   width: 100%;
   margin-left: 8%;
@@ -98,18 +104,24 @@ body main #boutonjouer {
 body main #boutonjouer:hover {
   opacity: 0.5;
 }
-body footer {
-  display: flex;
-  justify-content: center;
+body main #bullet {
+  width: 0.5%;
+  height: 3%;
+  position: absolute;
+  margin-left: 2.2%;
 }
-body footer #cowboy {
+body main #bullet {
+  position: absolute;
+}
+
+footer {
+  text-align: center;
+}
+footer #cowboy {
   position: absolute;
   bottom: 0;
   width: 3%;
-  height: 6%;
-}
-body footer #bullet {
-  position: absolute;
+  height: 8%;
 }
 
 /*# sourceMappingURL=main.css.map */
