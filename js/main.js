@@ -239,6 +239,14 @@ function tir() {
 
 function gameOver() {
 
+    //nouveau aurelien   
+    /*rejouerBtn.style.display = "block";
+    changeBackground(document.body, "images/bg_scene_2.jpg");
+    cancelAnimationFrame(animerBandits);
+    bandits.style.top = "0px";
+    bandits.innerHTML = "";
+    cadreJeu.removeChild(bandits);*/
+
     cancelAnimationFrame(animerBandits);
     cadreJeu.removeChild(bandits);
     const rejouerBtn = document.getElementById(rejouer);
@@ -250,4 +258,6 @@ function gameOver() {
     const bravoRejouer = document.getElementById(bravo_rejouer);
     bravoRejouer.style.display = "block";
     changeBackground(document.body, "images/bg_scene_2.jpg");
+    cadreJeu.removeChild(bandits);
+    rejouerBtn.style.display = none;
 }*/
