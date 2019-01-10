@@ -113,12 +113,17 @@ body main #cadre_jeu #bullet {
   position: absolute;
   margin-left: 2.2%;
 }
+<<<<<<< HEAD
+body main #bullet {
+  position: absolute;
+=======
 body main #cadre_jeu #cowboy {
   position: absolute;
   left: 48%;
   bottom: 0;
   width: 4%;
   height: 9%;
+>>>>>>> a6dbddc406d91ed422c2cd4ceb0b95658beeb8a7
 }
 
 footer {

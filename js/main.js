@@ -144,6 +144,34 @@ function bulletMve() {
     requestAnimationFrame(bulletMve);
 }
 //Debut tir 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ function Bullet (width, height, x, y){
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;
+}
+
+function tir (){
+   var bullet = new Bullet("10px", "10px", cowboy.style.);
+ 
+}
+=======
+    /*let Bullet ={
+        img.src = "../images/bullet.png";
+        img.style.width = 10;
+        img.style.height = 10;
+=======
+
+
+
+
+
+
+=======
+>>>>>>> a6dbddc406d91ed422c2cd4ceb0b95658beeb8a7
 function tir() {
     let myBullet = new Image();
     myBullet.src = 'images/bullet.png';
@@ -161,11 +189,19 @@ function tir() {
 
     //Tant que le bullet traverse l'écran 
     /*while (parseInt(bullet.style.bottom) > yMax) {
+>>>>>>> a0a29b18d9586e3fc9783a6c9c539c772a52ebfa
         
     }*/
+<<<<<<< HEAD
+>>>>>>> 9087b79ade1ddd247f9520a35684f9e25c0ecc58
+//Fin tir 
+=======
 }
 
 //Fin tir
+<<<<<<< HEAD
+>>>>>>> a0a29b18d9586e3fc9783a6c9c539c772a52ebfa
+=======
 
 function gameOver() {
     const rejouerBtn = document.getElementById(rejouer);
@@ -173,3 +209,4 @@ function gameOver() {
     changeBackground(document.body, "images/bg_scene_2.jpg");
     cadreJeu.removeChild(bandits);
 }
+>>>>>>> a6dbddc406d91ed422c2cd4ceb0b95658beeb8a7
