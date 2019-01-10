@@ -87,6 +87,28 @@ body main #boutonjouer {
 body main #boutonjouer:hover {
   opacity: 0.5;
 }
+body main #rejouer {
+  background-image: url(../images/buffaloskull.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-bottom: 100px;
+  text-transform: uppercase;
+  font-family: "western";
+  font-size: 0.9em;
+  margin-top: 3%;
+  display: none;
+}
+body main #rejouer:hover {
+  opacity: 0.5;
+}
+body main #rejouer #textgameover {
+  font-size: 2em;
+}
 body main #cadre_jeu {
   width: 100%;
 }
@@ -112,11 +134,8 @@ body main #cadre_jeu #cowboy {
   width: 4%;
   height: 9%;
 }
-body main #bullet {
-  position: absolute;
-}
-
-footer {
+body footer p {
+  font-size: 0.5em;
   text-align: center;
 }
 

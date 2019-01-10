@@ -236,4 +236,7 @@ function gameOver() {
     changeBackground(document.body, "images/bg_scene_2.jpg");
     mozCancelAnimationFrame(animerBandits);
     cadreJeu.removeChild(bandits);
+    const rejouerBtn = document.getElementById(rejouer);
+    rejouerBtn.style.display = "block";
+    changeBackground(document.body, "images/bg_scene_2.jpg");
 }
