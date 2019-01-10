@@ -43,7 +43,10 @@ function animerBandits() {
     // Position basse du bloc
     yBandits = parseFloat(getComputedStyle(bandits).bottom);
 
-
+    if (yBandits <= topCowboy) {
+        let btnRejouer = document.createElement('button');
+        cadreJeu.removeChild(bandits);
+    }
     // Si le ballon arrive a un bord du cadre
     if (((xBandits + diametreBandits) >= xMaxBandits) || (xBandits < xMin)) {
         // On inverse le sens de déplacement
@@ -57,10 +60,7 @@ function animerBandits() {
     // Demande au navigateur d'appeler animerBandit dès que possible
     animationId = requestAnimationFrame(animerBandits);
     // Collision des bandits avec le cowboy
-    if (yBandits <= topCowboy) {
-        cadreJeu.removeChild(bandits);
-        gameOver();
-    }
+
 }
 // fonction changement bg
 function changeBackground(bElement, bUrl) {
@@ -130,6 +130,19 @@ function droite() {
     // collision détectée !
 }*/
 
+function bulletMve() {
+    yBullet = parseFloat(getComputedStyle(bullet).bottom);
+    newYBullet = (yBullet + vitesseBullet);
+
+    /*if (collision) {
+
+    } else {
+        
+
+    }*/
+    bullet.style.bottom = (newYBullet + "px");
+    requestAnimationFrame(bulletMve);
+}
 //Debut tir 
 function tir() {
     let myBullet = new Image();
@@ -142,29 +155,21 @@ function tir() {
     bullet.style.left = cowboyX + "px";
     let yBullet = "";
     let newYBullet = "";
-    //Si il y a une collision
-    function bulletMve() {
-        yBullet = parseFloat(getComputedStyle(bullet).bottom);
-        newYBullet = (yBullet + vitesseBullet);
-
-        /*if (collision) {
-
-        } else {
-            
-
-        }*/
-        bullet.style.bottom = (newYBullet + "px");
-        requestAnimationFrame(bulletMve);
-    }
     requestAnimationFrame(bulletMve);
+    //Si il y a une collision
+
+
     //Tant que le bullet traverse l'écran 
     /*while (parseInt(bullet.style.bottom) > yMax) {
         
     }*/
 }
+
 //Fin tir
 
 function gameOver() {
-    let btnRejouer = document.createElement('button');
+    const rejouerBtn = document.getElementById(rejouer);
+    rejouerBtn.style.display = "block";
+    changeBackground(document.body, "images/bg_scene_2.jpg");
     cadreJeu.removeChild(bandits);
 }
