@@ -64,7 +64,7 @@ function animerBandits() {
 }
 // fonction changement bg
 function changeBackground(bElement, bUrl) {
-    return bElement.style.backgroundImage = "url(" + bUrl + ")", "cover", "no-repeat", "center";
+    return bElement.style.background = "url(" + bUrl + ")";
 }
 
 
@@ -165,6 +165,9 @@ function tir() {
 //Fin tir
 
 function gameOver() {
-    let btnRejouer = document.createElement('button');
+
     cadreJeu.removeChild(bandits);
+    const rejouerBtn = document.getElementById(rejouer);
+    rejouerBtn.style.display = "block";
+    changeBackground(document.body, "images/bg_scene_2.jpg");
 }
