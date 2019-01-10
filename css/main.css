@@ -66,22 +66,6 @@ body main #wantedlist .wanted {
   width: 15%;
   height: 90%;
 }
-body main #bandit {
-  position: absolute;
-}
-body main #bandit .ligne_bandit {
-  display: flex;
-  justify-content: space-around;
-}
-body main #bandit #ligne_bandit_2 {
-  display: flex;
-  justify-content: space-between;
-}
-body main #bandit .bandits {
-  width: 2%;
-  height: 4%;
-  margin: 0.5%;
-}
 body main #explication {
   margin-top: 5%;
   margin-left: 10%;
@@ -104,24 +88,46 @@ body main #boutonjouer {
 body main #boutonjouer:hover {
   opacity: 0.5;
 }
-body main #bullet {
+body main #cadre_jeu {
+  width: 100%;
+}
+body main #cadre_jeu #bandits {
+  position: absolute;
+}
+body main #cadre_jeu #bandits .ligne_bandit {
+  display: flex;
+  justify-content: space-around;
+}
+body main #cadre_jeu #bandits #ligne_bandit_2 {
+  display: flex;
+  justify-content: space-between;
+}
+body main #cadre_jeu #bandits .bandit {
+  width: 3%;
+  height: 6%;
+  margin: 0.5%;
+}
+body main #cadre_jeu #bullet {
   width: 0.5%;
   height: 3%;
   position: absolute;
   margin-left: 2.2%;
 }
+<<<<<<< HEAD
 body main #bullet {
   position: absolute;
+=======
+body main #cadre_jeu #cowboy {
+  position: absolute;
+  left: 48%;
+  bottom: 0;
+  width: 4%;
+  height: 9%;
+>>>>>>> a6dbddc406d91ed422c2cd4ceb0b95658beeb8a7
 }
 
 footer {
   text-align: center;
-}
-footer #cowboy {
-  position: absolute;
-  bottom: 0;
-  width: 3%;
-  height: 8%;
 }
 
 /*# sourceMappingURL=main.css.map */

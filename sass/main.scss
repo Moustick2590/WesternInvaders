@@ -65,22 +65,6 @@ body {
                 height: 90%;
             }
         }
-        #bandit {
-            position: absolute;
-            .ligne_bandit {
-                display: flex;
-                justify-content: space-around;
-            }
-            #ligne_bandit_2 {
-                display: flex;
-                justify-content: space-between;
-            }
-            .bandits {
-                width: 2%;
-                height: 4%;
-                margin: 0.5%;
-            }
-        }
         #explication {
             margin-top: 5%;
             margin-left: 10%;
@@ -103,11 +87,37 @@ body {
                 opacity: 0.5;
             }
         }
-        #bullet {
-            width: 0.5%;
-            height: 3%;
-            position: absolute;
-            margin-left: 2.2%;
+        #cadre_jeu {
+            width: 100%;
+            #bandits {
+                position: absolute;
+                .ligne_bandit {
+                    display: flex;
+                    justify-content: space-around;
+                }
+                #ligne_bandit_2 {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .bandit {
+                    width: 3%;
+                    height: 6%;
+                    margin: 0.5%;
+                }
+            }
+            #bullet {
+                width: 0.5%;
+                height: 3%;
+                position: absolute;
+                margin-left: 2.2%;
+            }
+            #cowboy {
+                position: absolute;
+                left: 48%;
+                bottom: 0;
+                width: 4%;
+                height: 9%;
+            }
         }
         
         #bullet {
@@ -119,10 +129,4 @@ body {
 
 footer {
     text-align: center;
-    #cowboy {
-        position: absolute;
-        bottom: 0;
-        width: 3%;
-        height: 8%;
-    }
 }
