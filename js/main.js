@@ -34,7 +34,50 @@ message = "Bienvenue au Far West ! Le shérif est mort, vous êtes notre unique 
 cour = 0;
 animation = setInterval("machineEcrire()", 50);
 
+//Ennemis
+function genBandit() {
+    for (var i = 1; i <= 24; i++) {
+        var bandit = document.createElement("div");
+        var stockNb = Math.floor(Math.random() * Math.floor(6));
 
+        //Bandit 1
+        if (stockNb = 0) {
+            bandit.style.backgroundImage = "url('imgages/bandit1.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 2
+        else if (stockNb = 1) {
+            bandit.style.backgroundImage = "url('imgages/bandit2.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 3
+        else if (stockNb = 2) {
+            bandit.style.backgroundImage = "url('imgages/bandit3.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 4
+        else if (stockNb = 3) {
+            bandit.style.backgroundImage = "url('imgages/bandit4.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 5
+        else if (stockNb = 4) {
+            bandit.style.backgroundImage = "url('imgages/bandit5.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 6
+        else if (stockNb = 5) {
+            bandit.style.backgroundImage = "url('imgages/bandit6.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        bandit.setAttribute("class", "bandit");
+        bandit.setAttribute("id", "bandit" + i);
+        bandit.style.display = "inline-block";
+
+        document.getElementById("bandits").appendChild(bandit);
+
+    }
+}
 
 // D2place le bandit vers la gauche ou la droite
 function animerBandits() {
@@ -72,8 +115,9 @@ function changeBackground(bElement, bUrl) {
 jouer.addEventListener("click", function() {
     jouer.style.display = "none"; // On enlève le bouton jouer
     explication.style.display = "none"; // On enlève le texte
-    /*genBandit();*/
+
     cadreJeu.appendChild(bandits); // On ajoute les bandits
+    genBandit();
     wantedList.style.display = "none"; // On enleve les affiches wanted
     requestAnimationFrame(animerBandits); // On démarre l'animation des bandits
     changeBackground(document.body, "images/bg_scene_1.jpg");
@@ -143,35 +187,7 @@ function bulletMve() {
     bullet.style.bottom = (newYBullet + "px");
     requestAnimationFrame(bulletMve);
 }
-//Debut tir 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
- function Bullet (width, height, x, y){
-    this.width = width;
-    this.height = height;
-    this.x = x;
-    this.y = y;
-}
 
-function tir (){
-   var bullet = new Bullet("10px", "10px", cowboy.style.);
- 
-}
-=======
-    /*let Bullet ={
-        img.src = "../images/bullet.png";
-        img.style.width = 10;
-        img.style.height = 10;
-=======
-
-
-
-
-
-
-=======
->>>>>>> a6dbddc406d91ed422c2cd4ceb0b95658beeb8a7
 function tir() {
     let myBullet = new Image();
     myBullet.src = 'images/bullet.png';
@@ -188,20 +204,10 @@ function tir() {
 
 
     //Tant que le bullet traverse l'écran 
-    /*while (parseInt(bullet.style.bottom) > yMax) {
->>>>>>> a0a29b18d9586e3fc9783a6c9c539c772a52ebfa
-        
-    }*/
-<<<<<<< HEAD
->>>>>>> 9087b79ade1ddd247f9520a35684f9e25c0ecc58
-//Fin tir 
-=======
-}
 
-//Fin tir
-<<<<<<< HEAD
->>>>>>> a0a29b18d9586e3fc9783a6c9c539c772a52ebfa
-=======
+    //Fin tir 
+
+}
 
 function gameOver() {
     const rejouerBtn = document.getElementById(rejouer);
@@ -209,4 +215,3 @@ function gameOver() {
     changeBackground(document.body, "images/bg_scene_2.jpg");
     cadreJeu.removeChild(bandits);
 }
->>>>>>> a6dbddc406d91ed422c2cd4ceb0b95658beeb8a7
