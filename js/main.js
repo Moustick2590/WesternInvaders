@@ -12,13 +12,13 @@ const cadreJeu = document.getElementById("cadre_jeu");
 const xMaxBandits = parseFloat(getComputedStyle(cadreJeu).width);
 const bandits = document.getElementById("bandits");
 let xBandits = "";
-const vitesseBandits = 3; // Valeur du déplacement en pixels
+const vitesseBandits = 2; // Valeur du déplacement en pixels
 const diametreBandits = parseFloat(getComputedStyle(bandits).width); // Conversion en nombre du diametre du bandit
 let animationId = null; // Identifiant de l'animation
 let direction = 1; // Sens de déplacement: 1 droite, 2 gauche
 let yBandits = "";
 let newYBandits = "";
-cadreJeu.removeChild(bandits);
+
 const wantedList = document.getElementById("wantedlist");
 const vitesseBullet = 4;
 
@@ -36,48 +36,53 @@ animation = setInterval("machineEcrire()", 50);
 
 //Ennemis
 function genBandit() {
+    var bandit = document.createElement("div");
+    var stockNb = Math.floor(Math.random() * Math.floor(6));
     for (var i = 1; i <= 24; i++) {
         var bandit = document.createElement("div");
         var stockNb = Math.floor(Math.random() * Math.floor(6));
 
         //Bandit 1
-        if (stockNb = 0) {
-            bandit.style.backgroundImage = "url('imgages/bandit1.png')";
-            bandit.style.backgroundSize = "cover";
+        if (stockNb == 0) {
+            bandit.style.backgroundImage = "url('images/bandit1.png')";
+
         }
         //Bandit 2
-        else if (stockNb = 1) {
-            bandit.style.backgroundImage = "url('imgages/bandit2.png')";
-            bandit.style.backgroundSize = "cover";
+        else if (stockNb == 1) {
+            bandit.style.backgroundImage = "url('images/bandit2.png')";
+
         }
         //Bandit 3
-        else if (stockNb = 2) {
-            bandit.style.backgroundImage = "url('imgages/bandit3.png')";
-            bandit.style.backgroundSize = "cover";
+        else if (stockNb == 2) {
+            bandit.style.backgroundImage = "url('images/bandit3.png')";
+
         }
         //Bandit 4
-        else if (stockNb = 3) {
-            bandit.style.backgroundImage = "url('imgages/bandit4.png')";
-            bandit.style.backgroundSize = "cover";
+        else if (stockNb == 3) {
+            bandit.style.backgroundImage = "url('images/bandit4.png')";
+
         }
         //Bandit 5
-        else if (stockNb = 4) {
-            bandit.style.backgroundImage = "url('imgages/bandit5.png')";
-            bandit.style.backgroundSize = "cover";
+        else if (stockNb == 4) {
+            bandit.style.backgroundImage = "url('images/bandit5.png')";
+
         }
         //Bandit 6
-        else if (stockNb = 5) {
-            bandit.style.backgroundImage = "url('imgages/bandit6.png')";
-            bandit.style.backgroundSize = "cover";
+        else if (stockNb == 5) {
+            bandit.style.backgroundImage = "url('images/bandit6.png')";
+
         }
         bandit.setAttribute("class", "bandit");
-        bandit.setAttribute("id", "bandit" + i);
+        bandit.id = 'bandit' + i;
+        bandit.style.width = bandits.offsetWidth / 8 + "px";
+        bandit.style.margin = bandits.offsetWidth / 64 + "px";
         bandit.style.display = "inline-block";
 
-        document.getElementById("bandits").appendChild(bandit);
+        bandits.appendChild(bandit);
 
     }
 }
+let banditArray = document.getElementsByClassName('bandit');
 
 // D2place le bandit vers la gauche ou la droite
 function animerBandits() {
@@ -107,7 +112,7 @@ function animerBandits() {
 }
 // fonction changement bg
 function changeBackground(bElement, bUrl) {
-    return bElement.style.backgroundImage = "url(" + bUrl + ")", "cover", "no-repeat", "center";
+    return bElement.style.backgroundImage = "url(" + bUrl + ")";
 }
 
 
@@ -115,8 +120,7 @@ function changeBackground(bElement, bUrl) {
 jouer.addEventListener("click", function() {
     jouer.style.display = "none"; // On enlève le bouton jouer
     explication.style.display = "none"; // On enlève le texte
-
-    cadreJeu.appendChild(bandits); // On ajoute les bandits
+    // On ajoute les bandits
     genBandit();
     wantedList.style.display = "none"; // On enleve les affiches wanted
     requestAnimationFrame(animerBandits); // On démarre l'animation des bandits
@@ -177,7 +181,7 @@ function droite() {
 function bulletMve() {
     yBullet = parseFloat(getComputedStyle(bullet).bottom);
     newYBullet = (yBullet + vitesseBullet);
-
+    let hauteurCadreJeu = cadreJeu.offsetHeight;
     /*if (collision) {
 
     } else {
@@ -186,6 +190,10 @@ function bulletMve() {
     }*/
     bullet.style.bottom = (newYBullet + "px");
     requestAnimationFrame(bulletMve);
+    if (newYBullet == hauteurCadreJeu) {
+        cadreJeu.removeChild(myBullet);
+        cancelAnimationFrame(bulletMve);
+    }
 }
 
 function tir() {
@@ -201,17 +209,31 @@ function tir() {
     let newYBullet = "";
     requestAnimationFrame(bulletMve);
     //Si il y a une collision
+    let isCollapsed = function() {
 
+        let coordBullet = bullet.getBoundingClientRect();
 
-    //Tant que le bullet traverse l'écran 
+        for (var i = 1; i <= banditArray.length; i++) {
+            let coordBandit = bandit[i].getBoundingClientRect();
+            if (coordBandit.left < coordBullet.left + coordBullet.width && coordBandit.left + coordBandit.width > coordBullet.left &&
+                coordBandit.top < coordBullet.top + coordBullet.height && coordBandit.top + coordBandit.height > coordBullet.top) {
+                bandits.removeChild(bandit[i]);
+                delete(bandit[i]);
+                cadreJeu.removeChild(bullet);
+            }
+        }
 
-    //Fin tir 
+        //Tant que le bullet traverse l'écran 
 
+        //Fin tir 
+
+    }
 }
 
 function gameOver() {
     const rejouerBtn = document.getElementById(rejouer);
     rejouerBtn.style.display = "block";
     changeBackground(document.body, "images/bg_scene_2.jpg");
+    mozCancelAnimationFrame(animerBandits);
     cadreJeu.removeChild(bandits);
 }

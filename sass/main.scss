@@ -6,7 +6,6 @@
 body {
     background-image: url("../images/bg_scene_2.jpg");
     background-size: cover;
-    background-position: center;
     width: 100%;
     margin: 0;
     font-family: "western";
@@ -91,18 +90,11 @@ body {
             width: 100%;
             #bandits {
                 position: absolute;
-                .ligne_bandit {
-                    display: flex;
-                    justify-content: space-around;
-                }
-                #ligne_bandit_2 {
-                    display: flex;
-                    justify-content: space-between;
-                }
+                width: 60%;
                 .bandit {
-                    width: 3%;
-                    height: 6%;
-                    margin: 0.5%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    height: 60px;
                 }
             }
             #bullet {
@@ -119,10 +111,8 @@ body {
                 height: 9%;
             }
         }
-        
         #bullet {
             position: absolute;
-            
         }
     }
 }
