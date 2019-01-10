@@ -34,7 +34,50 @@ message = "Bienvenue au Far West ! Le shérif est mort, vous êtes notre unique 
 cour = 0;
 animation = setInterval("machineEcrire()", 50);
 
+//Ennemis
+function genBandit() {
+    for (var i = 1; i <= 24; i++) {
+        var bandit = document.createElement("div");
+        var stockNb = Math.floor(Math.random() * Math.floor(6));
 
+        //Bandit 1
+        if (stockNb = 0) {
+            bandit.style.backgroundImage = "url('imgages/bandit1.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 2
+        else if (stockNb = 1) {
+            bandit.style.backgroundImage = "url('imgages/bandit2.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 3
+        else if (stockNb = 2) {
+            bandit.style.backgroundImage = "url('imgages/bandit3.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 4
+        else if (stockNb = 3) {
+            bandit.style.backgroundImage = "url('imgages/bandit4.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 5
+        else if (stockNb = 4) {
+            bandit.style.backgroundImage = "url('imgages/bandit5.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        //Bandit 6
+        else if (stockNb = 5) {
+            bandit.style.backgroundImage = "url('imgages/bandit6.png')";
+            bandit.style.backgroundSize = "cover";
+        }
+        bandit.setAttribute("class", "bandit");
+        bandit.setAttribute("id", "bandit" + i);
+        bandit.style.display = "inline-block";
+
+        document.getElementById("bandits").appendChild(bandit);
+
+    }
+}
 
 // D2place le bandit vers la gauche ou la droite
 function animerBandits() {
@@ -43,7 +86,10 @@ function animerBandits() {
     // Position basse du bloc
     yBandits = parseFloat(getComputedStyle(bandits).bottom);
 
-
+    if (yBandits <= topCowboy) {
+        let btnRejouer = document.createElement('button');
+        cadreJeu.removeChild(bandits);
+    }
     // Si le ballon arrive a un bord du cadre
     if (((xBandits + diametreBandits) >= xMaxBandits) || (xBandits < xMin)) {
         // On inverse le sens de déplacement
@@ -57,10 +103,7 @@ function animerBandits() {
     // Demande au navigateur d'appeler animerBandit dès que possible
     animationId = requestAnimationFrame(animerBandits);
     // Collision des bandits avec le cowboy
-    if (yBandits <= topCowboy) {
-        cadreJeu.removeChild(bandits);
-        gameOver();
-    }
+
 }
 // fonction changement bg
 function changeBackground(bElement, bUrl) {
@@ -72,8 +115,9 @@ function changeBackground(bElement, bUrl) {
 jouer.addEventListener("click", function() {
     jouer.style.display = "none"; // On enlève le bouton jouer
     explication.style.display = "none"; // On enlève le texte
-    /*genBandit();*/
+
     cadreJeu.appendChild(bandits); // On ajoute les bandits
+    genBandit();
     wantedList.style.display = "none"; // On enleve les affiches wanted
     requestAnimationFrame(animerBandits); // On démarre l'animation des bandits
     changeBackground(document.body, "images/bg_scene_1.jpg");
@@ -130,7 +174,20 @@ function droite() {
     // collision détectée !
 }*/
 
-//Debut tir 
+function bulletMve() {
+    yBullet = parseFloat(getComputedStyle(bullet).bottom);
+    newYBullet = (yBullet + vitesseBullet);
+
+    /*if (collision) {
+
+    } else {
+        
+
+    }*/
+    bullet.style.bottom = (newYBullet + "px");
+    requestAnimationFrame(bulletMve);
+}
+
 function tir() {
     let myBullet = new Image();
     myBullet.src = 'images/bullet.png';
@@ -142,30 +199,20 @@ function tir() {
     bullet.style.left = cowboyX + "px";
     let yBullet = "";
     let newYBullet = "";
-    //Si il y a une collision
-    function bulletMve() {
-        yBullet = parseFloat(getComputedStyle(bullet).bottom);
-        newYBullet = (yBullet + vitesseBullet);
-
-        /*if (collision) {
-
-        } else {
-            
-
-        }*/
-        bullet.style.bottom = (newYBullet + "px");
-        requestAnimationFrame(bulletMve);
-    }
     requestAnimationFrame(bulletMve);
+    //Si il y a une collision
+
+
     //Tant que le bullet traverse l'écran 
-    /*while (parseInt(bullet.style.bottom) > yMax) {
-        
-    }*/
+
+    //Fin tir 
+
 }
-//Fin tir
 
 function gameOver() {
-
+    const rejouerBtn = document.getElementById(rejouer);
+    rejouerBtn.style.display = "block";
+    changeBackground(document.body, "images/bg_scene_2.jpg");
     cadreJeu.removeChild(bandits);
     const rejouerBtn = document.getElementById(rejouer);
     rejouerBtn.style.display = "block";
