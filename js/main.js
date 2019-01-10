@@ -1,5 +1,6 @@
 /* fonction jouer */
 const jouer = document.getElementById("boutonjouer");
+const rejouerBtn = document.getElementById('rejouer');
 const explication = document.getElementById("explication");
 const cadreCowboy = document.getElementById("cadre_cowboy");
 const cowboy = document.getElementById("cowboy");
@@ -74,7 +75,7 @@ function genBandit() {
         }
         bandit.setAttribute("class", "bandit");
         bandit.id = 'bandit' + i;
-        bandit.style.width = bandits.offsetWidth / 8 + "px";
+        bandit.style.width = bandits.offsetWidth / 12 + "px";
         bandit.style.margin = bandits.offsetWidth / 64 + "px";
         bandit.style.display = "inline-block";
 
@@ -92,8 +93,7 @@ function animerBandits() {
     yBandits = parseFloat(getComputedStyle(bandits).bottom);
 
     if (yBandits <= topCowboy) {
-        let btnRejouer = document.createElement('button');
-        cadreJeu.removeChild(bandits);
+    return gameOver();
     }
     // Si le ballon arrive a un bord du cadre
     if (((xBandits + diametreBandits) >= xMaxBandits) || (xBandits < xMin)) {
@@ -125,6 +125,12 @@ jouer.addEventListener("click", function() {
     wantedList.style.display = "none"; // On enleve les affiches wanted
     requestAnimationFrame(animerBandits); // On démarre l'animation des bandits
     changeBackground(document.body, "images/bg_scene_1.jpg");
+})
+
+rejouerBtn.addEventListener("click", function() {
+    cadreJeu.appendChild(bandits);
+    genBandit();
+    rejouerBtn.style.display = "none";
 })
 
 
@@ -231,10 +237,10 @@ function tir() {
 }
 
 function gameOver() {
-    const rejouerBtn = document.getElementById(rejouer);
+    
     rejouerBtn.style.display = "block";
     changeBackground(document.body, "images/bg_scene_2.jpg");
-    mozCancelAnimationFrame(animerBandits);
+    cancelAnimationFrame(animerBandits);
     cadreJeu.removeChild(bandits);
-    
+
 }

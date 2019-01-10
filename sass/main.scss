@@ -50,25 +50,40 @@ body {
         }
     }
 
-    #jeu {
+    main {
+        display: flex;
         width: 100%;
-        height: 90%;
-        main {
-            display: flex;
 
-            #jouer {
-                background-image: url('../images/wheel.png');
-                width: 10%;
-                height: 10%;
-                background-size: cover;
+        #jouer {
+            background-image: url('../images/wheel.png');
+            width: 10%;
+            height: 10%;
+            background-size: cover;
+        }
+
+        align-content: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        #wantedlist {
+            width: 100%;
+            margin-left: 8%;
+            margin-top: 3%;
+
+            .wanted {
+                width: 15%;
+                height: 90%;
             }
         }
+
         #explication {
             margin-top: 5%;
             margin-left: 10%;
             width: 70%;
             text-align: justify;
         }
+
         #boutonjouer {
             background-image: url(../images/wheel.png);
             background-repeat: no-repeat;
@@ -81,10 +96,12 @@ body {
             font-family: "western";
             font-size: 1.5em;
             margin-top: 3%;
+
             &:hover {
                 opacity: 0.5;
             }
         }
+
         #rejouer {
             background-image: url(../images/buffaloskull.png);
             background-repeat: no-repeat;
@@ -100,46 +117,49 @@ body {
             font-size: 0.9em;
             margin-top: 3%;
             display: none;
+
             &:hover {
                 opacity: 0.5;
             }
+
             #textgameover {
                 font-size: 2em;
             }
         }
-        #cadre_jeu {
-            width: 100%;
-            #bandits {
-                position: absolute;
-                .ligne_bandit {
-                    display: flex;
-                    justify-content: space-around;
-                }
-                #ligne_bandit_2 {
-                    display: flex;
-                    justify-content: space-between;
-                }
-                .bandit {
-                    width: 3%;
-                    height: 6%;
-                    margin: 0.5%;
-                }
-            }
-            #bullet {
-                width: 0.5%;
-                height: 3%;
-                position: absolute;
-                margin-left: 2.2%;
-            }
-            #cowboy {
-                position: absolute;
-                left: 48%;
-                bottom: 0;
-                width: 4%;
-                height: 9%;
+    }
+
+    #cadre_jeu {
+        width: 100%;
+
+        #bandits {
+            position: absolute;
+            width: 60%;
+
+            .bandit {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 80px;
             }
         }
+
+        #bullet {
+            width: 0.5%;
+            height: 3%;
+            position: absolute;
+            margin-left: 2.2%;
+        }
+
+        #cowboy {
+            position: absolute;
+            left: 48%;
+            bottom: 0;
+            width: 4%;
+            height: 9%;
+        }
     }
+
+
     footer {
         p {
             font-size: 0.5em;
