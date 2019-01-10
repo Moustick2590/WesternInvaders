@@ -19,10 +19,14 @@ let animationId = null; // Identifiant de l'animation
 let direction = 1; // Sens de déplacement: 1 droite, 2 gauche
 let yBandits = "";
 let newYBandits = "";
-
+const bullet = document.getElementById('bullet');
+cadreJeu.removeChild(bullet);
 const wantedList = document.getElementById("wantedlist");
 const vitesseBullet = 4;
-
+let score = document.getElementById("score");
+score = 0;
+let scoreMax = document.getElementById('scoremax');
+scoreMax = 0;
 // defilement du texte
 /*function machineEcrire() {
     document.getElementById('explication').innerHTML = message.substr(0, cour) + "<span id='test'>" + message.charAt(cour) + "</span>";
@@ -93,7 +97,7 @@ function animerBandits() {
     yBandits = parseFloat(getComputedStyle(bandits).bottom);
 
     if (yBandits <= topCowboy) {
-    return gameOver();
+        return gameOver();
     }
     // Si le ballon arrive a un bord du cadre
     if (((xBandits + diametreBandits) >= xMaxBandits) || (xBandits < xMin)) {
@@ -117,7 +121,7 @@ function changeBackground(bElement, bUrl) {
 
 
 // Ajout de la fonction sur le bouton jouer
-jouer.addEventListener("click", function() {
+jouer.addEventListener("click", function () {
     jouer.style.display = "none"; // On enlève le bouton jouer
     explication.style.display = "none"; // On enlève le texte
     // On ajoute les bandits
@@ -127,10 +131,11 @@ jouer.addEventListener("click", function() {
     changeBackground(document.body, "images/bg_scene_1.jpg");
 })
 
-rejouerBtn.addEventListener("click", function() {
+rejouerBtn.addEventListener("click", function () {
     cadreJeu.appendChild(bandits);
     genBandit();
     rejouerBtn.style.display = "none";
+    requestAnimationFrame(animerBandits);
 })
 
 
@@ -146,7 +151,7 @@ rejouerBtn.addEventListener("click", function() {
 });*/
 
 // Fonction deplacement cowboy
-document.onkeydown = function(event) {
+document.onkeydown = function (event) {
     if (event.keyCode == 37) gauche();
     if (event.keyCode == 39) droite();
     if ((event.keyCode == 38) || (event.keyCode == 32)) tir();
@@ -203,11 +208,9 @@ function bulletMve() {
 }
 
 function tir() {
-    let myBullet = new Image();
-    myBullet.src = 'images/bullet.png';
-    myBullet.setAttribute("id", "bullet");
-    cadreJeu.appendChild(myBullet);
-    const bullet = document.getElementById('bullet');
+    
+    cadreJeu.appendChild(bullet);
+    
     let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
     bullet.style.bottom = topBullet + "px";
     bullet.style.left = cowboyX + "px";
@@ -215,16 +218,29 @@ function tir() {
     let newYBullet = "";
     requestAnimationFrame(bulletMve);
     //Si il y a une collision
-    let isCollapsed = function() {
+    let isCollapsed = function () {
 
         let coordBullet = bullet.getBoundingClientRect();
-
+        let coordBandit = banditArray[i].getBoundingClientRect();
         for (var i = 1; i <= banditArray.length; i++) {
-            let coordBandit = bandit[i].getBoundingClientRect();
+            
             if (coordBandit.left < coordBullet.left + coordBullet.width && coordBandit.left + coordBandit.width > coordBullet.left &&
                 coordBandit.top < coordBullet.top + coordBullet.height && coordBandit.top + coordBandit.height > coordBullet.top) {
-                bandits.removeChild(bandit[i]);
-                delete(bandit[i]);
+                if (bandit[i].className === 'bandit1') {
+                    score += 100;
+                } else if (bandit[i].className === 'bandit2') {
+                    score += 400;
+                } else if (bandit[i].className === 'bandit3') {
+                    score += 250;
+                } else if (bandit[i].className === 'bandit4') {
+                    score += 750;
+                } else if (bandit[i].className === 'bandit5') {
+                    score += 500;
+                } else if (bandit[i].className === 'bandit6') {
+                    score += 1000;
+                }
+                bandits.removeChild(banditArray[i]);
+                delete(banditArray[i]);
                 cadreJeu.removeChild(bullet);
             }
         }
@@ -237,10 +253,15 @@ function tir() {
 }
 
 function gameOver() {
-    
+
     rejouerBtn.style.display = "block";
     changeBackground(document.body, "images/bg_scene_2.jpg");
     cancelAnimationFrame(animerBandits);
+    bandits.style.top = "0px";
+    bandits.innerHTML = "";
     cadreJeu.removeChild(bandits);
+    if (score > scoreMax) {
+        scoreMax = score;
+    }
 
 }

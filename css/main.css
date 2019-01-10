@@ -125,10 +125,13 @@ body #cadre_jeu #bandits .bandit {
   height: 80px;
 }
 body #cadre_jeu #bullet {
-  width: 0.5%;
-  height: 3%;
   position: absolute;
   margin-left: 2.2%;
+  padding: 0;
+}
+body #cadre_jeu #bullet #my_bullet {
+  width: 7%;
+  height: 5%;
 }
 body #cadre_jeu #cowboy {
   position: absolute;

@@ -144,10 +144,13 @@ body {
         }
 
         #bullet {
-            width: 0.5%;
-            height: 3%;
             position: absolute;
             margin-left: 2.2%;
+            padding: 0;
+            #my_bullet {
+                width: 7%;
+                height: 5%;
+            }
         }
 
         #cowboy {
