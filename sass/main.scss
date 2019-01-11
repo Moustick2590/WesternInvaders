@@ -11,6 +11,79 @@ body {
     margin: 0;
     font-family: "western";
     font-size: 2.5em;
+    #win {
+        position: absolute;
+        top: 2%;
+        left: 25%;
+        background-color: darkgoldenrod;
+        width: 50%;
+        min-height: 70%;
+        border-radius: 10%;
+        padding: 2%;
+        display: none; // display: flex; pour voir la div win
+        flex-direction: column;
+        align-items: center;
+        h2,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+        .rejouer {
+            border: none;
+            background: none;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        #sheriff_star {
+            width: 35%;
+            height: auto;
+            margin-bottom: 2%;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        #win_subcontainer {
+            display: flex;
+            #moneybag {
+                width: 25%;
+                height: 28%;
+            }
+        }
+    }
+    #game_over {
+        position: absolute;
+        top: 2%;
+        left: 25%;
+        background-color: darkgoldenrod;
+        width: 50%;
+        min-height: 70%;
+        border-radius: 10%;
+        padding: 2%;
+        display: none; // display: flex; pour voir la div game_over
+        flex-direction: column;
+        align-items: center;
+        h2,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+        .rejouer {
+            border: none;
+            background: none;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        #bull_skull {
+            width: 50%;
+            height: auto;
+            margin-bottom: 2%;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
     header {
         display: flex;
         justify-content: space-around;

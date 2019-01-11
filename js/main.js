@@ -121,7 +121,7 @@ function changeBackground(bElement, bUrl) {
 
 
 // Ajout de la fonction sur le bouton jouer
-jouer.addEventListener("click", function () {
+jouer.addEventListener("click", function() {
     jouer.style.display = "none"; // On enlève le bouton jouer
     explication.style.display = "none"; // On enlève le texte
     // On ajoute les bandits
@@ -131,7 +131,7 @@ jouer.addEventListener("click", function () {
     changeBackground(document.body, "images/bg_scene_1.jpg");
 })
 
-rejouerBtn.addEventListener("click", function () {
+rejouerBtn.addEventListener("click", function() {
     cadreJeu.appendChild(bandits);
     genBandit();
     rejouerBtn.style.display = "none";
@@ -151,7 +151,7 @@ rejouerBtn.addEventListener("click", function () {
 });*/
 
 // Fonction deplacement cowboy
-document.onkeydown = function (event) {
+document.onkeydown = function(event) {
     if (event.keyCode == 37) gauche();
     if (event.keyCode == 39) droite();
     if ((event.keyCode == 38) || (event.keyCode == 32)) tir();
@@ -208,9 +208,9 @@ function bulletMve() {
 }
 
 function tir() {
-    
+
     cadreJeu.appendChild(bullet);
-    
+
     let topBullet = (parseFloat(getComputedStyle(cowboy).bottom)) + (parseFloat(getComputedStyle(cowboy).height));
     bullet.style.bottom = topBullet + "px";
     bullet.style.left = cowboyX + "px";
@@ -218,12 +218,12 @@ function tir() {
     let newYBullet = "";
     requestAnimationFrame(bulletMve);
     //Si il y a une collision
-    let isCollapsed = function () {
+    let isCollapsed = function() {
 
         let coordBullet = bullet.getBoundingClientRect();
         let coordBandit = banditArray[i].getBoundingClientRect();
         for (var i = 1; i <= banditArray.length; i++) {
-            
+
             if (coordBandit.left < coordBullet.left + coordBullet.width && coordBandit.left + coordBandit.width > coordBullet.left &&
                 coordBandit.top < coordBullet.top + coordBullet.height && coordBandit.top + coordBandit.height > coordBullet.top) {
                 if (bandit[i].className === 'bandit1') {
@@ -255,7 +255,7 @@ function tir() {
 
 function gameOver() {
 
-    rejouerBtn.style.display = "block";
+    document.getElementById('game_over').style.display = "flex";
     changeBackground(document.body, "images/bg_scene_2.jpg");
     cancelAnimationFrame(animerBandits);
     bandits.style.top = "0px";
@@ -265,6 +265,16 @@ function gameOver() {
         scoreMax = score;
     }
 }
+
+function win() {
+
+    document.getElementById('win').style.display = "flex";
+    changeBackground(document.body, "images/bg_scene_2.jpg");
+    cancelAnimationFrame(animerBandits);
+    cadreJeu.removeChild(bandits);
+
+}
+
 /*function bravo() {
     const bravoRejouer = document.getElementById(bravo_rejouer);
     bravoRejouer.style.display = "block";

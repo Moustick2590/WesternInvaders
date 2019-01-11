@@ -11,6 +11,79 @@ body {
   font-family: "western";
   font-size: 2.5em;
 }
+body #win {
+  position: absolute;
+  top: 2%;
+  left: 25%;
+  background-color: darkgoldenrod;
+  width: 50%;
+  min-height: 70%;
+  border-radius: 10%;
+  padding: 2%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+body #win h2,
+body #win p {
+  padding: 0;
+  margin: 0;
+}
+body #win .rejouer {
+  border: none;
+  background: none;
+}
+body #win .rejouer:hover {
+  opacity: 0.5;
+}
+body #win #sheriff_star {
+  width: 35%;
+  height: auto;
+  margin-bottom: 2%;
+}
+body #win #sheriff_star:hover {
+  opacity: 0.5;
+}
+body #win #win_subcontainer {
+  display: flex;
+}
+body #win #win_subcontainer #moneybag {
+  width: 25%;
+  height: 28%;
+}
+body #game_over {
+  position: absolute;
+  top: 2%;
+  left: 25%;
+  background-color: darkgoldenrod;
+  width: 50%;
+  min-height: 70%;
+  border-radius: 10%;
+  padding: 2%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+body #game_over h2,
+body #game_over p {
+  padding: 0;
+  margin: 0;
+}
+body #game_over .rejouer {
+  border: none;
+  background: none;
+}
+body #game_over .rejouer:hover {
+  opacity: 0.5;
+}
+body #game_over #bull_skull {
+  width: 50%;
+  height: auto;
+  margin-bottom: 2%;
+}
+body #game_over #bull_skull:hover {
+  opacity: 0.5;
+}
 body header {
   display: flex;
   justify-content: space-around;
