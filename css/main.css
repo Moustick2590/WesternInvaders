@@ -5,110 +5,46 @@
 body {
   background-image: url("../images/bg_scene_2.jpg");
   background-size: cover;
-  background-position: center;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   font-family: "western";
   font-size: 2.5em;
-}
-body #win {
-  position: absolute;
-  top: 2%;
-  left: 25%;
-  background-color: darkgoldenrod;
-  width: 50%;
-  min-height: 70%;
-  border-radius: 10%;
-  padding: 2%;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-}
-body #win h2,
-body #win p {
-  padding: 0;
-  margin: 0;
-}
-body #win .rejouer {
-  border: none;
-  background: none;
-}
-body #win .rejouer:hover {
-  opacity: 0.5;
-}
-body #win #sheriff_star {
-  width: 35%;
-  height: auto;
-  margin-bottom: 2%;
-}
-body #win #sheriff_star:hover {
-  opacity: 0.5;
-}
-body #win #win_subcontainer {
-  display: flex;
-}
-body #win #win_subcontainer #moneybag {
-  width: 25%;
-  height: 28%;
-}
-body #game_over {
-  position: absolute;
-  top: 2%;
-  left: 25%;
-  background-color: darkgoldenrod;
-  width: 50%;
-  min-height: 70%;
-  border-radius: 10%;
-  padding: 2%;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-}
-body #game_over h2,
-body #game_over p {
-  padding: 0;
-  margin: 0;
-}
-body #game_over .rejouer {
-  border: none;
-  background: none;
-}
-body #game_over .rejouer:hover {
-  opacity: 0.5;
-}
-body #game_over #bull_skull {
-  width: 50%;
-  height: auto;
-  margin-bottom: 2%;
-}
-body #game_over #bull_skull:hover {
-  opacity: 0.5;
 }
 body header {
   display: flex;
   justify-content: space-around;
   flex-wrap: nowrap;
   flex-direction: row;
-  height: 100px;
+  height: 10vh;
   background-image: url("../images/bgtitre.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   align-items: center;
 }
-body header h1 {
+body header .divscore {
+  display: flex;
+  align-items: center;
+}
+body header #titre {
+  display: flex;
+}
+body header #titre h1 {
+  justify-content: flex-start;
   font-size: 1.5em;
   letter-spacing: 3px;
-  margin-top: 1%;
+  margin-top: 10%;
   text-align: center;
   font-weight: 100;
-  margin-left: 10%;
   text-transform: uppercase;
 }
-body header h1 #logo {
-  width: 15%;
-  margin-right: 5%;
-  margin-top: 5%;
+body header #logo {
+  width: 70px;
+  height: 70px;
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-left: 80px;
 }
 body header #moneysm {
   width: 25px;
@@ -125,44 +61,93 @@ body main {
   flex-direction: row;
   flex-wrap: wrap;
 }
-body main #bandits {
+body main #win {
   position: absolute;
-  width: 60%;
+  top: 20%;
+  left: 30%;
+  background-color: darkgoldenrod;
+  width: 30%;
+  min-height: 30%;
+  border-radius: 10%;
+  padding: 2%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
 }
-body main #bandits .bandit {
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 60px;
+body main #win h2,
+body main #win p {
+  padding: 0;
+  margin: 0;
+  font-weight: 100;
 }
-body main #bravo_rejouer {
+body main #win #rejouerwin {
   background-image: url(../images/sherifstar.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   border: none;
   background-color: transparent;
-  padding: 80px;
+  padding: 55px;
   text-transform: uppercase;
   font-family: "western";
-  font-size: 1.5em;
+  font-size: 1.2em;
+  z-index: 3;
   margin-top: 3%;
+  color: black;
+}
+body main #win #rejouerwin:hover {
+  color: white;
+  filter: contrast(170%);
+}
+body main #win #win_subcontainer {
+  display: flex;
+}
+body main #win #win_subcontainer #moneybag {
+  width: 25%;
+  height: 28%;
+}
+body main #game_over {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  background-color: darkgoldenrod;
+  width: 30%;
+  min-height: 30%;
+  border-radius: 10%;
+  padding: 2%;
   display: none;
+  flex-direction: column;
+  align-items: center;
 }
-body main #bravo_rejouer:hover {
-  opacity: 0.5;
+body main #game_over h2,
+body main #game_over p {
+  padding: 0;
+  margin: 0;
+  font-weight: 100;
 }
-body main #bravo_rejouer #textbravo {
-  font-size: 0.8em;
+body main #game_over #rejouerloose {
+  background-image: url(../images/buffaloskull.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  padding: 55px;
+  text-transform: uppercase;
+  font-family: "western";
+  font-size: 1.2em;
+  margin-top: 3%;
+  color: black;
+  z-index: 3;
 }
-body main #jouer {
-  background-image: url("../images/wheel.png");
-  width: 10%;
-  height: 10%;
-  background-size: cover;
+body main #game_over #rejouerloose:hover {
+  color: maroon;
+  filter: contrast(170%);
 }
 body main #wantedlist {
-  width: 100%;
-  margin-left: 8%;
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
   margin-top: 3%;
 }
 body main #wantedlist .wanted {
@@ -170,8 +155,8 @@ body main #wantedlist .wanted {
   height: 90%;
 }
 body main #explication {
-  margin-top: 5%;
-  margin-left: 10%;
+  margin-top: 5vh;
+  margin-left: 5%;
   width: 70%;
   text-align: justify;
 }
@@ -180,70 +165,60 @@ body main #boutonjouer {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  background-blend-mode: lighten;
   border: none;
   background-color: transparent;
-  padding: 45px;
+  padding: 55px;
   text-transform: uppercase;
   font-family: "western";
-  font-size: 1.5em;
-  margin-top: 3%;
+  font-size: 1.2em;
+  margin-top: 3vh;
+  color: white;
 }
 body main #boutonjouer:hover {
-  opacity: 0.5;
+  color: gold;
+  filter: contrast(170%);
 }
-body main #rejouer {
-  background-image: url(../images/buffaloskull.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  border: none;
-  background-color: transparent;
-  padding-right: 100px;
-  padding-left: 100px;
-  padding-bottom: 100px;
-  text-transform: uppercase;
-  font-family: "western";
-  font-size: 0.9em;
-  margin-top: 3%;
-  display: none;
+body main #cadre_jeu {
+  width: 100vw;
 }
-body main #rejouer:hover {
-  opacity: 0.5;
-}
-body main #rejouer #textgameover {
-  font-size: 2em;
-}
-body #cadre_jeu {
-  width: 100%;
-}
-body #cadre_jeu #bandits {
+body main #cadre_jeu #bandits {
   position: absolute;
-  width: 60%;
 }
-body #cadre_jeu #bandits .bandit {
-  background-size: contain;
+body main #cadre_jeu #bandits .bandit {
   background-repeat: no-repeat;
-  background-position: center;
-  height: 80px;
-}
-body #cadre_jeu #bullet {
+  display: inline-block;
   position: absolute;
-  margin-left: 2.2%;
-  padding: 0;
+  width: 4vw;
+  height: 9vh;
 }
-body #cadre_jeu #bullet #my_bullet {
-  width: 7%;
-  height: 5%;
+body main #cadre_jeu .bullet {
+  position: absolute;
+  width: 0.5%;
+  height: 2%;
+  margin-left: 3%;
 }
-body #cadre_jeu #cowboy {
+body main #cadre_jeu #cowboy {
   position: absolute;
   left: 48%;
-  bottom: 0;
-  width: 4%;
-  height: 9%;
+  bottom: 2vh;
+  width: 7vh;
+  height: 8vh;
 }
 body footer {
   display: flex;
+  height: 1vh;
+}
+body footer #credits {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  bottom: 0px;
+  position: fixed;
+  align-content: flex-end;
+  font-size: 0.5em;
+  margin-bottom: 0px;
+  flex: 3;
 }
 
 /*# sourceMappingURL=main.css.map */

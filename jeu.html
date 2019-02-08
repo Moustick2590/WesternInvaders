@@ -39,19 +39,22 @@
     </header>
 
     <main>
-
-        <div id="explication"></div>
-        <form action="jeu.html">
-            <button type="submit" name="button" value="jouer" id="boutonjouer">jouer</button>
-        </form>
-        <div id="wantedlist">
-            <img class="wanted" src="images/wanted_bandit1.png" alt="affiche d'un bandit recherché" width="342" height="401">
-            <img class="wanted" src="images/wanted_bandit4.png" alt="affiche d'un indien recherché" width="342" height="401">
-            <img class="wanted" src="images/wanted_bandit3.png" alt="affiche d'un indien recherché" width="342" height="401">
-            <img class="wanted" src="images/wanted_bandit6.png" alt="affiche d'un mexicain recherché" width="342" height="401">
-            <img class="wanted" src="images/wanted_bandit2.png" alt="affiche d'un bandit recherché" width="342" height="401">
-            <img class="wanted" src="images/wanted_bandit5.png" alt="affiche d'un bandit recherché" width="342" height="401">
+        <div id="win">
+            <button class="rejouer" id="rejouerwin">REJOUER</button>
+            <h2>BRAVO</h2>
+            <p>Il y a un nouveau shérif en ville !</p>
+            <div id="win_subcontainer">
+                <p>Tu as gagné : </p>
+                <p id="amount"></p>
+                <img src="images/smallmoneybag.png" alt="moneybag" id="moneybag" width="148px" height="176px">
+            </div>
         </div>
+        <div id="game_over">
+            <button class="rejouer" id="rejouerloose">REJOUER</button>
+            <h2>DOMMAGE</h2>
+            <p>Les bandits ont gagné</p>
+        </div>
+
         <!-- ------------------------------------Ennemis------------------------------------------------------------ -->
         <div id="cadre_jeu">
             <!-- ------------------------------------Héros--------------------------------------------------------------- -->
@@ -64,7 +67,7 @@
     <footer>
         <p id="credits">Credits to CoralieL Marie-AngeR AurelienC</p>
     </footer>
-    <script src="js/accueil.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

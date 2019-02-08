@@ -6,243 +6,255 @@
 body {
     background-image: url("../images/bg_scene_2.jpg");
     background-size: cover;
-    background-position: center;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     margin: 0;
     font-family: "western";
     font-size: 2.5em;
-    #win {
-        position: absolute;
-        top: 2%;
-        left: 25%;
-        background-color: darkgoldenrod;
-        width: 50%;
-        min-height: 70%;
-        border-radius: 10%;
-        padding: 2%;
-        display: none; // display: flex; pour voir la div win
-        flex-direction: column;
-        align-items: center;
-        h2,
-        p {
-            padding: 0;
-            margin: 0;
-        }
-        .rejouer {
-            border: none;
-            background: none;
-            &:hover {
-                opacity: 0.5;
-            }
-        }
-        #sheriff_star {
-            width: 35%;
-            height: auto;
-            margin-bottom: 2%;
-            &:hover {
-                opacity: 0.5;
-            }
-        }
-        #win_subcontainer {
-            display: flex;
-            #moneybag {
-                width: 25%;
-                height: 28%;
-            }
-        }
-    }
-    #game_over {
-        position: absolute;
-        top: 2%;
-        left: 25%;
-        background-color: darkgoldenrod;
-        width: 50%;
-        min-height: 70%;
-        border-radius: 10%;
-        padding: 2%;
-        display: none; // display: flex; pour voir la div game_over
-        flex-direction: column;
-        align-items: center;
-        h2,
-        p {
-            padding: 0;
-            margin: 0;
-        }
-        .rejouer {
-            border: none;
-            background: none;
-            &:hover {
-                opacity: 0.5;
-            }
-        }
-        #bull_skull {
-            width: 50%;
-            height: auto;
-            margin-bottom: 2%;
-            &:hover {
-                opacity: 0.5;
-            }
-        }
-    }
+
     header {
         display: flex;
         justify-content: space-around;
         flex-wrap: nowrap;
         flex-direction: row;
-        height: 100px;
+        height: 10vh;
         background-image: url("../images/bgtitre.png");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
         align-items: center;
-        h1 {
-            font-size: 1.5em;
-            letter-spacing: 3px;
-            margin-top: 1%;
-            text-align: center;
-            font-weight: 100;
-            margin-left: 10%;
-            text-transform: uppercase;
-            #logo {
-                width: 15%;
-                margin-right: 5%;
-                margin-top: 5%;
+
+        .divscore {
+            display: flex;
+            align-items: center;
+        }
+
+        #titre {
+            display: flex;
+
+            h1 {
+                justify-content: flex-start;
+                font-size: 1.5em;
+                letter-spacing: 3px;
+                margin-top: 10%;
+                text-align: center;
+                font-weight: 100;
+                text-transform: uppercase;
             }
         }
+
+        #logo {
+            width: 70px;
+            height: 70px;
+            margin-top: 50px;
+            margin-right: 20px;
+            margin-left: 80px;
+        }
+
         #moneysm {
             width: 25px;
             height: 35px;
         }
+
         #moneygd {
             width: 40px;
             height: 60px;
         }
     }
+
     main {
         display: flex;
-        #bandits {
+
+        #win {
             position: absolute;
-            width: 60%;
-            .bandit {
-                background-size: contain;
+            top: 20%;
+            left: 30%;
+            background-color: darkgoldenrod;
+            width: 30%;
+            min-height: 30%;
+            border-radius: 10%;
+            padding: 2%;
+            display: none; // display: flex; pour voir la div win
+            flex-direction: column;
+            align-items: center;
+
+            h2,
+            p {
+                padding: 0;
+                margin: 0;
+                font-weight: 100;
+            }
+
+            #rejouerwin {
+                background-image: url(../images/sherifstar.png);
                 background-repeat: no-repeat;
-                height: 60px;
+                background-position: center;
+                background-size: contain;
+                border: none;
+                background-color: transparent;
+                padding: 55px;
+                text-transform: uppercase;
+                font-family: "western";
+                font-size: 1.2em;
+                z-index: 3;
+                margin-top: 3%;
+                color: black;
+
+                &:hover {
+                    color: white;
+                    filter: contrast(170%);
+                }
+            }
+
+            #win_subcontainer {
+                display: flex;
+
+                #moneybag {
+                    width: 25%;
+                    height: 28%;
+                }
             }
         }
-        #bravo_rejouer {
-            background-image: url(../images/sherifstar.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            border: none;
-            background-color: transparent;
-            padding: 80px;
-            text-transform: uppercase;
-            font-family: "western";
-            font-size: 1.5em;
-            margin-top: 3%;
-            display: none;
-            &:hover {
-                opacity: 0.5;
+
+        #game_over {
+            position: absolute;
+            top: 20%;
+            left: 35%;
+            background-color: darkgoldenrod;
+            width: 30%;
+            min-height: 30%;
+            border-radius: 10%;
+            padding: 2%;
+            display: none; // display: flex; pour voir la div game_over
+            flex-direction: column;
+            align-items: center;
+
+            h2,
+            p {
+                padding: 0;
+                margin: 0;
+                font-weight: 100;
             }
-            #textbravo {
-                font-size: 0.8em;
+
+            #rejouerloose {
+                background-image: url(../images/buffaloskull.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                border: none;
+                background-color: transparent;
+                padding: 55px;
+                text-transform: uppercase;
+                font-family: "western";
+                font-size: 1.2em;
+                margin-top: 3%;
+                color: black;
+                z-index: 3;
+
+                &:hover {
+                    color: maroon;
+                    filter: contrast(170%);
+                }
             }
         }
-        #jouer {
-            background-image: url('../images/wheel.png');
-            width: 10%;
-            height: 10%;
-            background-size: cover;
-        }
+
         align-content: center;
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
+
         #wantedlist {
-            width: 100%;
-            margin-left: 8%;
+            display: flex;
+            width: 90%;
+            justify-content: space-around;
             margin-top: 3%;
             .wanted {
                 width: 15%;
                 height: 90%;
             }
         }
+
         #explication {
-            margin-top: 5%;
-            margin-left: 10%;
+            margin-top: 5vh;
+            margin-left: 5%;
             width: 70%;
             text-align: justify;
         }
+
         #boutonjouer {
             background-image: url(../images/wheel.png);
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
+            background-blend-mode: lighten;
             border: none;
             background-color: transparent;
-            padding: 45px;
+            padding: 55px;
             text-transform: uppercase;
             font-family: "western";
-            font-size: 1.5em;
-            margin-top: 3%;
+            font-size: 1.2em;
+            margin-top: 3vh;
+            color: white;
+
             &:hover {
-                opacity: 0.5;
+                color: gold;
+                filter: contrast(170%);
             }
         }
-        #rejouer {
-            background-image: url(../images/buffaloskull.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            border: none;
-            background-color: transparent;
-            padding-right: 100px;
-            padding-left: 100px;
-            padding-bottom: 100px;
-            text-transform: uppercase;
-            font-family: "western";
-            font-size: 0.9em;
-            margin-top: 3%;
-            display: none;
-            &:hover {
-                opacity: 0.5;
+
+        #cadre_jeu {
+            width: 100vw;
+            
+
+            #bandits {
+                position: absolute;
+                .bandit {
+                    
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    position: absolute;
+                    width: 4vw;
+                    height: 9vh;
+
+                }
             }
-            #textgameover {
-                font-size: 2em;
+
+            .bullet {
+                position: absolute;
+                width: 0.5%;
+                height: 2%;
+                margin-left: 3%;
             }
+
+            #cowboy {
+                position: absolute;
+                left: 48%;
+                bottom: 0 + 2vh;
+                width: 7vh;
+                height: 8vh;
+            }
+            
         }
     }
-    #cadre_jeu {
-        width: 100%;
-        #bandits {
-            position: absolute;
-            width: 60%;
-            .bandit {
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                height: 80px;
-            }
-        }
-        #bullet {
-            position: absolute;
-            margin-left: 2.2%;
-            padding: 0;
-            #my_bullet {
-                width: 7%;
-                height: 5%;
-            }
-        }
-        #cowboy {
-            position: absolute;
-            left: 48%;
-            bottom: 0;
-            width: 4%;
-            height: 9%;
-        }
-    }
+
+
+
     footer {
         display: flex;
+        height: 1vh;
+
+        #credits {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            bottom: 0px;
+            position: fixed;
+            align-content: flex-end;
+            font-size: 0.5em;
+            margin-bottom: 0px;
+            flex: 3;
+        }
     }
 }
+
+
