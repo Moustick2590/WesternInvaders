@@ -91,6 +91,7 @@ function jeu() {
         };
         if ((event.keyCode == 38) || (event.keyCode == 32)) {
             tir();
+
         }
     }
 
@@ -113,7 +114,7 @@ function jeu() {
     //Tir
     function tir() {
         // On crée le proijectile
-        var bullet = document.createElement("img");
+        let bullet = document.createElement("img");
         bullet.setAttribute("class", "bullet");
         bullet.setAttribute("src", "images/bullet.png");
         bullet.setAttribute("width", "163");
@@ -142,7 +143,6 @@ function jeu() {
             for (var i = 0; i < banditArray.length; i++) {
                 let coordBandit = banditArray[i].getBoundingClientRect();
                 if (coordBullet.left < coordBandit.left + coordBandit.width && coordBullet.left + coordBullet.width > coordBandit.left && coordBullet.top < coordBandit.top + coordBandit.height && coordBullet.top + coordBullet.height > coordBandit.top) {
-                    console.log(banditArray[i].className);
                     if (banditArray[i].className == 'bandit bandit1') {
                         points += 100
                         score.textContent = points;
@@ -163,8 +163,7 @@ function jeu() {
                             pointsPartie.textContent = score.textContent;
                             return;
                         }
-                    }
-                    if (banditArray[i].className == 'bandit bandit2') {
+                    } else if (banditArray[i].className == 'bandit bandit2') {
                         points += 400;
                         score.textContent = points;
                         bandits.removeChild(banditArray[i]);
@@ -184,8 +183,7 @@ function jeu() {
                             pointsPartie.textContent = score.textContent;
                             return;
                         }
-                    }
-                    if (banditArray[i].className == 'bandit bandit3') {
+                    } else if (banditArray[i].className == 'bandit bandit3') {
                         points += 250;
                         score.textContent = points;
                         bandits.removeChild(banditArray[i]);
@@ -205,8 +203,7 @@ function jeu() {
                             pointsPartie.textContent = score.textContent;
                             return;
                         }
-                    }
-                    if (banditArray[i].className == 'bandit bandit4') {
+                    } else if (banditArray[i].className == 'bandit bandit4') {
                         points += 750;
                         score.textContent = points;
                         bandits.removeChild(banditArray[i]);
@@ -226,8 +223,7 @@ function jeu() {
                             pointsPartie.textContent = score.textContent;
                             return;
                         }
-                    }
-                    if (banditArray[i].className == 'bandit bandit5') {
+                    } else if (banditArray[i].className == 'bandit bandit5') {
                         points += 500;
                         score.textContent = points;
                         bandits.removeChild(banditArray[i]);
@@ -247,8 +243,7 @@ function jeu() {
                             pointsPartie.textContent = score.textContent;
                             return;
                         }
-                    }
-                    if (banditArray[i].className == 'bandit bandit6') {
+                    } else if (banditArray[i].className == 'bandit bandit6') {
                         points += 1000;
                         score.textContent = points;
                         bandits.removeChild(banditArray[i]);
@@ -274,6 +269,7 @@ function jeu() {
             requestAnimationFrame(bulletMve);
         }
         requestAnimationFrame(bulletMve);
+    
     }
 
 }

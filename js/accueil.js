@@ -14,4 +14,5 @@ message = "Bienvenue au Far West ! Le shérif est mort, vous êtes notre unique 
 cour = 0;
 animation = setInterval("machineEcrire()", 50);
 
+scoreMax.textContent = localStorage.setItem("meilleurScore", 0);
 scoreMax.textContent = localStorage.getItem("meilleurScore");
